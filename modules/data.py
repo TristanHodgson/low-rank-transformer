@@ -58,10 +58,8 @@ def get_data():
     data = data.map(truncate)
     data = data.map(tokenise)
 
-    data = data.map(lambda sentence: {
-                    "encrypted_tokens": ceaser.encrypt(sentence["tokens"])})
-    data = data.map(lambda sentence: {
-                    "encrypted": untokenise(sentence["encrypted_tokens"])})
+    data = data.map(lambda sentence: {"encrypted_tokens": ceaser.encrypt(sentence["tokens"])})
+    # data = data.map(lambda sentence: {"encrypted": untokenise(sentence["encrypted_tokens"])})
 
     test = data["test"]
     train = data["train"]

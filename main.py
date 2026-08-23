@@ -3,9 +3,13 @@ from torch.utils.data import DataLoader
 from modules.data import get_data
 
 
+########################
+### Loading the data ###
+########################
+
 def create_dataloader(data, batch_size=32, shuffle=True):
     data.set_format(type="torch", columns=["encrypted_tokens", "tokens"])
-    return DataLoader(data, batch_size=batch_size, shuffle=True)
+    return DataLoader(data, batch_size=batch_size, shuffle=shuffle)
 
 
 train, test = get_data()
