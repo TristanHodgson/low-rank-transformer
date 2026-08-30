@@ -14,7 +14,7 @@ def create_dataloader(data, batch_size=32, shuffle=True):
 
 train, test = get_data()
 train = create_dataloader(train)
-test = create_dataloader(test)
+test = create_dataloader(test, shuffle=False)
 
 batch = next(iter(test))
 print(batch.keys()) 

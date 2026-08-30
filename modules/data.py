@@ -6,8 +6,10 @@ BLOCK_LENGTH = 32
 
 
 def clean_text(sentence):
-    # Remove punctuation and convert to lowercase
-    sentence["text"] = re.sub(r'[^a-z ]', '', sentence["text"].lower())
+    text = sentence["text"].lower()
+    text = re.sub(r"[^a-z]+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    sentence["text"] = text
     return sentence
 
 
