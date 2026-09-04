@@ -12,7 +12,8 @@ runpod.api_key = os.environ["RUNPOD_API_KEY"]
 pod = runpod.create_pod(
     name="low-rank-transformer",
     image_name="runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
-    gpu_type_id="NVIDIA RTX A5000",
+    # gpu_type_id="NVIDIA RTX A5000",
+    gpu_type_id="NVIDIA GeForce RTX 3090",
     cloud_type="COMMUNITY",
     gpu_count=1,
 
