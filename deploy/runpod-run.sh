@@ -4,11 +4,7 @@ cd /workspace/low-rank-transformer
 
 pip install -r requirements.txt
 
-# For the current test:
-nvidia-smi > output.txt 2>&1
-
-# Later replace the previous line with:
-# python -u main.py > output.txt 2>&1
+python -u main.py > output.txt 2>&1
 
 MAIN_EXIT=$?
 
