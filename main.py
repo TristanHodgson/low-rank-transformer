@@ -22,7 +22,7 @@ LOAD = False
 if LOAD:
     model = TransformerModel.load("model/full_rank.pth").to(device)
 else:
-    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth")
+    model = train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="model/full_rank.pth")
 
 
 ########################
@@ -32,8 +32,10 @@ else:
 print("\n"*3)
 criterion = nn.CrossEntropyLoss()
 
-train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
-val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
+train_loss, train_char_acc, train_seq_acc = evaluate(
+    model, train_dataloader, criterion)
+val_loss, val_char_acc, val_seq_acc = evaluate(
+    model, test_dataloader, criterion)
 
 table_data = []
 table_data.append(["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
@@ -50,28 +52,32 @@ singular_values = {}
 for name, module in list(model.named_modules()):
     if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
         W = module.weight.data
-        
+
         U, D, V = torch.linalg.svd(W, full_matrices=False)
         singular_values[name] = D
-        
+
         layer_B = nn.Linear(module.in_features, RANK, bias=False).to(W.device)
-        layer_A = nn.Linear(RANK, module.out_features, bias=(module.bias is not None)).to(W.device)
-        
+        layer_A = nn.Linear(RANK, module.out_features, bias=(
+            module.bias is not None)).to(W.device)
+
         layer_B.weight.data = torch.diag(torch.sqrt(D[:RANK])) @ V[:RANK, :]
         layer_A.weight.data = U[:, :RANK] @ torch.diag(torch.sqrt(D[:RANK]))
         if module.bias is not None:
             layer_A.bias.data = module.bias.data
 
         parent = model.get_submodule(name.rsplit(".", 1)[0])
-        setattr(parent, name.rsplit(".", 1)[-1], nn.Sequential(layer_B, layer_A))
+        setattr(parent, name.rsplit(".", 1)
+                [-1], nn.Sequential(layer_B, layer_A))
 
 
 #################################
 ### Evaluate compressed model ###
 #################################
 
-train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
-val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
+train_loss, train_char_acc, train_seq_acc = evaluate(
+    model, train_dataloader, criterion)
+val_loss, val_char_acc, val_seq_acc = evaluate(
+    model, test_dataloader, criterion)
 
 table_data.append([RANK, train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
 print(tabulate(table_data, headers=table_headers, tablefmt="github"))
@@ -92,6 +98,7 @@ def format_name(raw_name: str) -> str:
     name = name.replace("linear1", "Layer 1")
     name = name.replace("linear2", "Layer 2")
     return name.title()
+
 
 os.makedirs(f"img/scree_plots/{RANK}", exist_ok=True)
 

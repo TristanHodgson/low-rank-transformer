@@ -1,11 +1,14 @@
 from datasets import load_dataset
 import re
-from modules import ceaser
 
 from torch.utils.data import DataLoader
 import torch
 
+from modules import ceaser
+
+
 BLOCK_LENGTH = 32
+BATCH_SIZE = 256
 
 
 def clean_text(sentence):
@@ -72,7 +75,8 @@ def get_data(limit=2**15):
 
     return data["train"], data["test"]
 
-def create_dataloader(data, batch_size=256, shuffle=True):
+
+def create_dataloader(data, batch_size=BATCH_SIZE, shuffle=True):
     data.set_format(type="torch", columns=["encrypted_tokens", "tokens"])
     return DataLoader(
         data,

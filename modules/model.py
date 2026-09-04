@@ -14,7 +14,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # See https://raw.githubusercontent.com/karpathy/ng-video-lecture/refs/heads/master/gpt.py
 # From the tutorial Let's build GPT: from scratch, in code, spelled out by Andrej Karpathy
 # https://www.youtube.com/watch?v=kCc8FmEb1nY
-# Modified to use F.scaled_dot_product_attention to increase speed by computing every head at once.
+# Modified to use F.scaled_dot_product_attention to increase speed by computing every head at once
 
 
 class MultiHeadAttention(nn.Module):
@@ -168,8 +168,7 @@ def evaluate(model, dataloader, criterion):
 ########################
 
 
-
-def train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth"):
+def train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="model/full_rank.pth"):
     model = TransformerModel(
         vocab_size=32,
         seq_len=32,
@@ -182,9 +181,10 @@ def train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="mode
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    for epoch in tqdm(range(1, EPOCHS + 1)):
+    for epoch in range(1, EPOCHS + 1):
         train_loss = train_epoch(model, train_dataloader, optimizer, criterion)
-        val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
+        val_loss, val_char_acc, val_seq_acc = evaluate(
+            model, test_dataloader, criterion)
 
         print(f"Epoch {epoch:02d} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Val Char Acc: {val_char_acc * 100:.2f}% | Val Seq Acc: {val_seq_acc * 100:.2f}%")
 
