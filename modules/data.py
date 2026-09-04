@@ -51,18 +51,20 @@ def untokenise(tokens):
     return "".join([num_to_char(token) for token in tokens])
 
 
-def get_data():
+def get_data(limit=2**15):
     data = load_dataset("agentlans/high-quality-english-sentences")
 
+    data["train"] = data["train"].select(range(limit))
+    data["test"] = data["test"].select(range(limit))
+
     data = data.map(clean_text)
-    # Filter out sentences that are shorter than BLOCK_LENGTH
     data = data.filter(lambda sentence: len(sentence["text"]) >= BLOCK_LENGTH)
     data = data.map(truncate)
     data = data.map(tokenise)
+    data = data.map(
+        lambda sentence: {
+            "encrypted_tokens": ceaser.encrypt(sentence["tokens"])
+        }
+    )
 
-    data = data.map(lambda sentence: {"encrypted_tokens": ceaser.encrypt(sentence["tokens"])})
-    # data = data.map(lambda sentence: {"encrypted": untokenise(sentence["encrypted_tokens"])})
-
-    test = data["test"]
-    train = data["train"]
-    return train, test
+    return data["train"], data["test"]
