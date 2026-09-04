@@ -118,8 +118,8 @@ def train_epoch(model, dataloader, optimizer, criterion):
     total_loss = 0.0
 
     for batch in dataloader:
-        inputs = batch["encrypted_tokens"].to(device)
-        targets = batch["tokens"].to(device)
+        inputs = batch["encrypted_tokens"].to(DEVICE)
+        targets = batch["tokens"].to(DEVICE)
 
         optimizer.zero_grad(set_to_none=True)
         logits = model(inputs)
@@ -142,8 +142,8 @@ def evaluate(model, dataloader, criterion):
     total_seqs = 0
 
     for batch in dataloader:
-        inputs = batch["encrypted_tokens"].to(device)
-        targets = batch["tokens"].to(device)
+        inputs = batch["encrypted_tokens"].to(DEVICE)
+        targets = batch["tokens"].to(DEVICE)
 
         logits = model(inputs)
         loss = criterion(logits.view(-1, logits.size(-1)), targets.view(-1))
