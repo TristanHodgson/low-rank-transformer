@@ -20,7 +20,7 @@ cd low-rank-transformer
 pip install -r requirements.txt
 
 # Run training and save both stdout and stderr.
-python -u main.py > output.txt 2>&1
+nvidia-smi > output.txt 2>&1
 MAIN_EXIT=$?
 
 # Archive the entire repository, including the model, images and output.txt.
