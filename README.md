@@ -2,8 +2,7 @@
 
 ## To Run
 
-```
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install datasets tabulate
-```
+### Locally
 
+1. [Install PyTorch using the relevant command](https://pytorch.org/get-started/locally/)
+2. Install other requirements: `pip install -r requirements.txt`
