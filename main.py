@@ -22,7 +22,7 @@ LOAD = False
 if LOAD:
     model = TransformerModel.load("model/full_rank.pth").to(device)
 else:
-    model = train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="model/full_rank.pth")
+    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4)
 
 
 ########################
@@ -53,12 +53,11 @@ for name, module in list(model.named_modules()):
     if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
         W = module.weight.data
 
-        U, D, V = torch.linalg.svd(W, full_matrices=False)
+        U, D, V = torch.linalg.svd(W)
         singular_values[name] = D
 
         layer_B = nn.Linear(module.in_features, RANK, bias=False).to(W.device)
-        layer_A = nn.Linear(RANK, module.out_features, bias=(
-            module.bias is not None)).to(W.device)
+        layer_A = nn.Linear(RANK, module.out_features, bias=(module.bias is not None)).to(W.device)
 
         layer_B.weight.data = torch.diag(torch.sqrt(D[:RANK])) @ V[:RANK, :]
         layer_A.weight.data = U[:, :RANK] @ torch.diag(torch.sqrt(D[:RANK]))

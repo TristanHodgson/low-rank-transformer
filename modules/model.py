@@ -4,6 +4,8 @@ import torch.nn.functional as F
 
 from tqdm import tqdm
 
+import os
+
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -168,7 +170,7 @@ def evaluate(model, dataloader, criterion):
 ########################
 
 
-def train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="model/full_rank.pth"):
+def train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="full_rank.pth"):
     model = TransformerModel(
         vocab_size=32,
         seq_len=32,
@@ -188,5 +190,6 @@ def train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="model
 
         print(f"Epoch {epoch:02d} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Val Char Acc: {val_char_acc * 100:.2f}% | Val Seq Acc: {val_seq_acc * 100:.2f}%")
 
-    torch.save(model.state_dict(), save_path)
+    os.makedirs(f"model", exist_ok=True)
+    torch.save(model.state_dict(), f"model/{save_path}")
     return model
