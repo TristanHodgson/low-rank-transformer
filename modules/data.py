@@ -3,6 +3,7 @@ import re
 from modules import ceaser
 
 from torch.utils.data import DataLoader
+import torch
 
 BLOCK_LENGTH = 32
 

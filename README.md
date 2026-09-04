@@ -4,6 +4,6 @@
 
 ```
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install datasets
+pip install datasets tabulate
 ```
 
