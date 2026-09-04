@@ -2,6 +2,8 @@ from datasets import load_dataset
 import re
 from modules import ceaser
 
+from torch.utils.data import DataLoader
+
 BLOCK_LENGTH = 32
 
 
@@ -68,3 +70,13 @@ def get_data(limit=2**15):
     )
 
     return data["train"], data["test"]
+
+def create_dataloader(data, batch_size=256, shuffle=True):
+    data.set_format(type="torch", columns=["encrypted_tokens", "tokens"])
+    return DataLoader(
+        data,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        num_workers=4,
+        pin_memory=torch.cuda.is_available(),
+    )

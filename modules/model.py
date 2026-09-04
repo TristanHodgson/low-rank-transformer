@@ -1,35 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.data import DataLoader
 
 from tqdm import tqdm
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-from modules.data import get_data
-
-# Gracefully defaults to CPU when CUDA is unavailable
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-########################
-### Loading the data ###
-########################
-
-
-def create_dataloader(data, batch_size=256, shuffle=True):
-    data.set_format(type="torch", columns=["encrypted_tokens", "tokens"])
-    return DataLoader(
-        data,
-        batch_size=batch_size,
-        shuffle=shuffle,
-        num_workers=4,
-        pin_memory=torch.cuda.is_available(),
-    )
-
-
-train, test = get_data()
-train = create_dataloader(train)
-test = create_dataloader(test, shuffle=False)
 
 ########################
 ###       Model      ###
@@ -137,7 +113,7 @@ class TransformerModel(nn.Module):
 ########################
 
 
-def train_epoch(model, dataloader, optimizer, criterion, device):
+def train_epoch(model, dataloader, optimizer, criterion):
     model.train()
     total_loss = 0.0
 
@@ -157,7 +133,7 @@ def train_epoch(model, dataloader, optimizer, criterion, device):
 
 
 @torch.no_grad()
-def evaluate(model, dataloader, criterion, device):
+def evaluate(model, dataloader, criterion):
     model.eval()
     total_loss = 0.0
     correct_chars = 0
@@ -192,25 +168,25 @@ def evaluate(model, dataloader, criterion, device):
 ########################
 
 
-model = TransformerModel(
-    vocab_size=32,
-    seq_len=32,
-    d_model=768,
-    n_heads=12,
-    d_ff=3072,
-    n_layers=12,
-).to(device)
 
-criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+def train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth"):
+    model = TransformerModel(
+        vocab_size=32,
+        seq_len=32,
+        d_model=768,
+        n_heads=12,
+        d_ff=3072,
+        n_layers=12,
+    ).to(DEVICE)
 
-epochs = 10
-for epoch in tqdm(range(1, epochs + 1)):
-    train_loss = train_epoch(model, train, optimizer, criterion, device)
-    val_loss, val_char_acc, val_seq_acc = evaluate(
-        model, test, criterion, device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    print(f"Epoch {epoch:02d} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Val Char Acc: {val_char_acc * 100:.2f}% | Val Seq Acc: {val_seq_acc * 100:.2f}%")
+    for epoch in tqdm(range(1, EPOCHS + 1)):
+        train_loss = train_epoch(model, train_dataloader, optimizer, criterion)
+        val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
 
+        print(f"Epoch {epoch:02d} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} | Val Char Acc: {val_char_acc * 100:.2f}% | Val Seq Acc: {val_seq_acc * 100:.2f}%")
 
-torch.save(model.state_dict(), "model/full_rank.pth")
+    torch.save(model.state_dict(), save_path)
+    return model
