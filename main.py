@@ -20,7 +20,7 @@ def format_name(raw_name: str) -> str:
     name = name.replace("linear2", "Layer 2")
     return name.title()
 
-def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion, device):
+def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion):
     model = copy.deepcopy(base_model).to(device)
     singular_values = {}
     rank_table_data = []
