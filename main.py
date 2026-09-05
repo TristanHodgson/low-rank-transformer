@@ -67,7 +67,7 @@ LOAD = False
 if LOAD: 
     model = TransformerModel.load("model/full_rank.pth").to(device)
 else: 
-    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth")
+    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="full_rank.pth")
 
 
 
