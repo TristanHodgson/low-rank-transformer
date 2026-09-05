@@ -139,5 +139,6 @@ for name, S in saved_sv.items():
     plt.yscale("log")
     plt.ylabel("Singular Value (Log Scale)")
     plt.xlabel("Index")
-    plt.savefig(f"img/scree_plots/{readable_name}.png")
+    plt.tight_layout()
+    plt.savefig(f"img/scree_plots/{readable_name}.png", dpi=600, bbox_inches="tight")
     plt.close()
