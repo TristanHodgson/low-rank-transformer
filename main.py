@@ -58,6 +58,7 @@ def get_rank(singular_values, threshold=0.975):
 
 singular_values = {}
 
+rank_table_data = []
 for name, module in list(model.named_modules()):
     if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
         W = module.weight.data
@@ -65,6 +66,7 @@ for name, module in list(model.named_modules()):
         U, D, V = torch.linalg.svd(W)
         singular_values[name] = D
         rank = get_rank(D, threshold=0.975)
+        rank_table_data.append([name, rank, len(D)])
 
         layer_B = nn.Linear(module.in_features, rank, bias=False).to(W.device)
         layer_A = nn.Linear(rank, module.out_features, bias=(module.bias is not None)).to(W.device)
@@ -78,6 +80,7 @@ for name, module in list(model.named_modules()):
         setattr(parent, name.rsplit(".", 1)
                 [-1], nn.Sequential(layer_B, layer_A))
 
+print(tabulate(rank_table_data, headers=["Layer Name", "Rank", "Original Rank"], tablefmt="github"))
 
 #################################
 ### Evaluate compressed model ###
