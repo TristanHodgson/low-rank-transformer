@@ -172,3 +172,5 @@ cython_debug/
 
 .env
 .vscode
+model/*
+img/*

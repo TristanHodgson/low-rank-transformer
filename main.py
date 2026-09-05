@@ -42,11 +42,20 @@ table_data.append(["Full", train_loss, train_char_acc, train_seq_acc, val_loss, 
 table_headers = ["Model Rank", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc"]
 
 
+#########################
+### Compress function ###
+#########################
+
+def get_rank(singular_values, threshold=0.975):
+    cum_sum = torch.cumsum(singular_values, dim=0)
+    threshold_total = cum_sum[-1] * threshold
+    rank = torch.searchsorted(cum_sum, threshold_total).item() + 1
+    return rank
+
 ########################
 ###  Compress model  ###
 ########################
 
-RANK = 10
 singular_values = {}
 
 for name, module in list(model.named_modules()):
@@ -55,12 +64,13 @@ for name, module in list(model.named_modules()):
 
         U, D, V = torch.linalg.svd(W)
         singular_values[name] = D
+        rank = get_rank(D, threshold=0.975)
 
-        layer_B = nn.Linear(module.in_features, RANK, bias=False).to(W.device)
-        layer_A = nn.Linear(RANK, module.out_features, bias=(module.bias is not None)).to(W.device)
+        layer_B = nn.Linear(module.in_features, rank, bias=False).to(W.device)
+        layer_A = nn.Linear(rank, module.out_features, bias=(module.bias is not None)).to(W.device)
 
-        layer_B.weight.data = torch.diag(torch.sqrt(D[:RANK])) @ V[:RANK, :]
-        layer_A.weight.data = U[:, :RANK] @ torch.diag(torch.sqrt(D[:RANK]))
+        layer_B.weight.data = torch.diag(torch.sqrt(D[:rank])) @ V[:rank, :]
+        layer_A.weight.data = U[:, :rank] @ torch.diag(torch.sqrt(D[:rank]))
         if module.bias is not None:
             layer_A.bias.data = module.bias.data
 
@@ -78,7 +88,7 @@ train_loss, train_char_acc, train_seq_acc = evaluate(
 val_loss, val_char_acc, val_seq_acc = evaluate(
     model, test_dataloader, criterion)
 
-table_data.append([RANK, train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
+table_data.append(["97.5\% of singular value weight", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
 print(tabulate(table_data, headers=table_headers, tablefmt="github"))
 
 
@@ -109,5 +119,6 @@ for name, D in singular_values.items():
     plt.yscale("log")
     plt.ylabel("Singular Value (Log Scale)")
     plt.xlabel("Index")
-    plt.savefig(f"img/scree_plots/{RANK}/{readable_name}.png")
+    plt.tight_layout()
+    plt.savefig(f"img/scree_plots/{RANK}/{readable_name}.png", bbox_inches="tight")
     plt.close()
