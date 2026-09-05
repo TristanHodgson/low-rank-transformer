@@ -4,7 +4,6 @@ from pathlib import Path
 import runpod
 from dotenv import load_dotenv
 
-
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 runpod.api_key = os.environ["RUNPOD_API_KEY"]
@@ -16,17 +15,24 @@ pod = runpod.create_pod(
     gpu_type_id="NVIDIA GeForce RTX 3090",
     cloud_type="COMMUNITY",
     gpu_count=1,
-
     container_disk_in_gb=50,
     volume_in_gb=0,
 
-    docker_args="bash -lc 'git clone https://github.com/TristanHodgson/low-rank-transformer.git /workspace/low-rank-transformer && bash /workspace/low-rank-transformer/deploy/runpod-run.sh'",
+    docker_args=(
+        "bash -lc '"
+        "git clone "
+        "https://github.com/TristanHodgson/low-rank-transformer.git "
+        "/workspace/low-rank-transformer "
+        "&& bash /workspace/low-rank-transformer/deploy/runpod-run.sh"
+        "'"
+    ),
 
     env={
         "RUNPOD_API_KEY": os.environ["RUNPOD_API_KEY"],
-        "NEXTCLOUD_USERNAME": os.environ["NEXTCLOUD_USERNAME"],
-        "NEXTCLOUD_APP_PASSWORD": os.environ["NEXTCLOUD_APP_PASSWORD"],
-        "NEXTCLOUD_URL": os.environ["NEXTCLOUD_URL"],
+        "R2_ACCESS_KEY_ID": os.environ["R2_ACCESS_KEY_ID"],
+        "R2_SECRET_ACCESS_KEY": os.environ["R2_SECRET_ACCESS_KEY"],
+        "R2_ENDPOINT": os.environ["R2_ENDPOINT"],
+        "R2_BUCKET": os.environ["R2_BUCKET"],
     },
 )
 

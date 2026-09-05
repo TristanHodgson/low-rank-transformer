@@ -4,3 +4,4 @@ matplotlib
 tqdm
 runpod
 python-dotenv
+boto3
