@@ -1,4 +1,5 @@
 import os
+import copy
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -6,98 +7,6 @@ from tabulate import tabulate
 
 from modules.data import create_dataloader, get_data
 from modules.model import train, TransformerModel, evaluate
-
-########################
-### Create and train ###
-########################
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-train_data, test_data = get_data()
-train_dataloader = create_dataloader(train_data)
-test_dataloader = create_dataloader(test_data, shuffle=False)
-
-LOAD = False
-
-if LOAD:
-    model = TransformerModel.load("model/full_rank.pth").to(device)
-else:
-    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4)
-
-
-########################
-###  Evaluate model  ###
-########################
-
-print("\n"*3)
-criterion = nn.CrossEntropyLoss()
-
-train_loss, train_char_acc, train_seq_acc = evaluate(
-    model, train_dataloader, criterion)
-val_loss, val_char_acc, val_seq_acc = evaluate(
-    model, test_dataloader, criterion)
-
-table_data = []
-table_data.append(["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
-table_headers = ["Model Rank", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc"]
-
-
-#########################
-### Compress function ###
-#########################
-
-def get_rank(singular_values, threshold=0.975):
-    cum_sum = torch.cumsum(singular_values, dim=0)
-    threshold_total = cum_sum[-1] * threshold
-    rank = torch.searchsorted(cum_sum, threshold_total).item() + 1
-    return rank
-
-########################
-###  Compress model  ###
-########################
-
-singular_values = {}
-
-rank_table_data = []
-for name, module in list(model.named_modules()):
-    if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
-        W = module.weight.data
-
-        U, D, V = torch.linalg.svd(W)
-        singular_values[name] = D
-        rank = get_rank(D, threshold=0.975)
-        rank_table_data.append([name, rank, len(D)])
-
-        layer_B = nn.Linear(module.in_features, rank, bias=False).to(W.device)
-        layer_A = nn.Linear(rank, module.out_features, bias=(module.bias is not None)).to(W.device)
-
-        layer_B.weight.data = torch.diag(torch.sqrt(D[:rank])) @ V[:rank, :]
-        layer_A.weight.data = U[:, :rank] @ torch.diag(torch.sqrt(D[:rank]))
-        if module.bias is not None:
-            layer_A.bias.data = module.bias.data
-
-        parent = model.get_submodule(name.rsplit(".", 1)[0])
-        setattr(parent, name.rsplit(".", 1)
-                [-1], nn.Sequential(layer_B, layer_A))
-
-print(tabulate(rank_table_data, headers=["Layer Name", "Rank", "Original Rank"], tablefmt="github"))
-
-#################################
-### Evaluate compressed model ###
-#################################
-
-train_loss, train_char_acc, train_seq_acc = evaluate(
-    model, train_dataloader, criterion)
-val_loss, val_char_acc, val_seq_acc = evaluate(
-    model, test_dataloader, criterion)
-
-table_data.append(["97.5\% of singular value weight", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc])
-print(tabulate(table_data, headers=table_headers, tablefmt="github"))
-
-
-########################
-###    Skee plots    ###
-########################
 
 def format_name(raw_name: str) -> str:
     name = raw_name.replace("blocks.", "Block ")
@@ -111,17 +20,94 @@ def format_name(raw_name: str) -> str:
     name = name.replace("linear2", "Layer 2")
     return name.title()
 
+def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion, device):
+    model = copy.deepcopy(base_model).to(device)
+    singular_values = {}
+    rank_table_data = []
+    for name, module in list(model.named_modules()):
+        if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
+            W = module.weight.data
+            
+            U, D, V = torch.linalg.svd(W, full_matrices=False)
+            singular_values[name] = D
+            
+            rank = rank_fn(name, D)
+            rank_table_data.append([format_name(name), rank, len(D), name])
+            
+            if rank >= min(module.in_features, module.out_features):
+                continue
+            
+            layer_B = nn.Linear(module.in_features, rank, bias=False).to(W.device)
+            layer_A = nn.Linear(rank, module.out_features, bias=(module.bias is not None)).to(W.device)
+            
+            layer_B.weight.data = torch.diag(torch.sqrt(D[:rank])) @ V[:rank, :]
+            layer_A.weight.data = U[:, :rank] @ torch.diag(torch.sqrt(D[:rank]))
+            if module.bias is not None:
+                layer_A.bias.data = module.bias.data
 
-os.makedirs(f"img/scree_plots/{RANK}", exist_ok=True)
+            parent = model.get_submodule(name.rsplit(".", 1)[0])
+            setattr(parent, name.rsplit(".", 1)[-1], nn.Sequential(layer_B, layer_A))
 
-for name, D in singular_values.items():
+    train_res = evaluate(model, train_loader, criterion, device)
+    val_res = evaluate(model, test_loader, criterion, device)
+    print(tabulate(rank_table_data, headers=["Layer", "Rank", "Original Rank", "Module Name"], tablefmt="github"))
+    return [*train_res, *val_res], singular_values
+
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+train_data, test_data = get_data()
+train_dataloader = create_dataloader(train_data)
+test_dataloader = create_dataloader(test_data, shuffle=False)
+
+
+
+LOAD = False
+if LOAD: 
+    model = TransformerModel.load("model/full_rank.pth").to(device)
+else: 
+    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth", device=device)
+
+
+
+print("\n"*3)
+criterion = nn.CrossEntropyLoss()
+train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion, device)
+val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion, device)
+
+
+
+
+
+table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc]]
+table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc"]
+
+STRATEGIES = {
+    "Uniform Rank 10": lambda name, S: 10,
+    "Energy 95%": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.95).nonzero(as_tuple=True)[0][0].item() + 1,
+    "Q Proj Only (Rank 10)": lambda name, S: 10 if "q_proj" in name else len(S)
+}
+
+
+saved_sv = None
+
+for strat_name, rank_fn in STRATEGIES.items():
+    results, sv = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion, device)
+    table_data.append([strat_name] + results)
+    if saved_sv is None:
+        saved_sv = sv
+
+print(tabulate(table_data, headers=table_headers, tablefmt="github"))
+
+os.makedirs("img/scree_plots", exist_ok=True)
+for name, S in saved_sv.items():
     readable_name = format_name(name)
     plt.figure(figsize=(6, 3))
-    plt.plot(D.cpu().numpy())
+    plt.plot(S.cpu().numpy(), color="blue")
     plt.title(f"Scree Plot: {readable_name}")
     plt.yscale("log")
     plt.ylabel("Singular Value (Log Scale)")
     plt.xlabel("Index")
-    plt.tight_layout()
-    plt.savefig(f"img/scree_plots/{RANK}/{readable_name}.png", bbox_inches="tight")
+    plt.savefig(f"img/scree_plots/{readable_name}.png")
     plt.close()
