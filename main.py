@@ -48,8 +48,8 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
             parent = model.get_submodule(name.rsplit(".", 1)[0])
             setattr(parent, name.rsplit(".", 1)[-1], nn.Sequential(layer_B, layer_A))
 
-    train_res = evaluate(model, train_loader, criterion, device)
-    val_res = evaluate(model, test_loader, criterion, device)
+    train_res = evaluate(model, train_loader, criterion)
+    val_res = evaluate(model, test_loader, criterion)
     print(tabulate(rank_table_data, headers=["Layer", "Rank", "Original Rank", "Module Name"], tablefmt="github"))
     return [*train_res, *val_res], singular_values
 
@@ -67,14 +67,14 @@ LOAD = False
 if LOAD: 
     model = TransformerModel.load("model/full_rank.pth").to(device)
 else: 
-    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth", device=device)
+    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="model/full_rank.pth")
 
 
 
 print("\n"*3)
 criterion = nn.CrossEntropyLoss()
-train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion, device)
-val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion, device)
+train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
+val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
 
 
 
@@ -93,7 +93,7 @@ STRATEGIES = {
 saved_sv = None
 
 for strat_name, rank_fn in STRATEGIES.items():
-    results, sv = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion, device)
+    results, sv = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
     table_data.append([strat_name] + results)
     if saved_sv is None:
         saved_sv = sv
