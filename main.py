@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from tabulate import tabulate
 
 from modules.data import create_dataloader, get_data
-from modules.model import train, TransformerModel, evaluate
+from modules.model import train, Model, evaluate
 
 def format_name(raw_name: str) -> str:
     name = raw_name.replace("blocks.", "Block ")
@@ -64,7 +64,7 @@ test_dataloader = create_dataloader(test_data, shuffle=False)
 
 LOAD = True
 if LOAD: 
-    model = TransformerModel(
+    model = Model(
         vocab_size=32,
         seq_len=32,
         d_model=768,

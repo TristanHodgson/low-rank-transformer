@@ -79,7 +79,7 @@ class Block(nn.Module):
         return x
 
 
-class TransformerModel(nn.Module):
+class Model(nn.Module):
     def __init__(self, vocab_size, seq_len, d_model, n_heads, d_ff, n_layers):
         super().__init__()
 
@@ -171,7 +171,7 @@ def evaluate(model, dataloader, criterion):
 
 
 def train(train_dataloader, test_dataloader, EPOCHS=5, LR=1e-4, save_path="full_rank.pth"):
-    model = TransformerModel(
+    model = Model(
         vocab_size=32,
         seq_len=32,
         d_model=768,
