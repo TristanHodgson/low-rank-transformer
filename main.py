@@ -23,7 +23,6 @@ def format_name(raw_name: str) -> str:
 def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion):
     model = copy.deepcopy(base_model).to(device)
     singular_values = {}
-    rank_table_data = []
     for name, module in list(model.named_modules()):
         if isinstance(module, nn.Linear) and not name.endswith("output"):
             W = module.weight.data
@@ -32,7 +31,6 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
             singular_values[name] = D
             
             rank = rank_fn(name, D)
-            rank_table_data.append([format_name(name), rank, len(D), name])
             
             if rank >= min(module.in_features, module.out_features):
                 continue
@@ -50,8 +48,8 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
 
     train_res = evaluate(model, train_loader, criterion)
     val_res = evaluate(model, test_loader, criterion)
-    print(tabulate(rank_table_data, headers=["Layer", "Rank", "Original Rank", "Module Name"], tablefmt="github"))
-    return [*train_res, *val_res], singular_values
+    param_count = sum(p.numel() for p in model.parameters())
+    return [*train_res, *val_res], singular_values, param_count
 
 
 
@@ -87,8 +85,8 @@ val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion
 
 
 
-table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc]]
-table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc"]
+table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc, param_count]]
+table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters  Count"]
 
 STRATEGIES = {}
 
@@ -99,8 +97,8 @@ saved_sv = None
 
 for strat_name, rank_fn in STRATEGIES.items():
     print(f"\n\n\n\n ### {strat_name}")
-    results, sv = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
-    table_data.append([strat_name] + results)
+    results, sv, param_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
+    table_data.append([strat_name] + results + [param_count])
     if saved_sv is None:
         saved_sv = sv
 
