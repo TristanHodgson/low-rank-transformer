@@ -80,7 +80,7 @@ print("\n"*3)
 criterion = nn.CrossEntropyLoss()
 train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
 val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
-
+param_count = sum(p.numel() for p in model.parameters())
 
 
 
