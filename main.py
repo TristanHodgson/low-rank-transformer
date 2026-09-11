@@ -62,14 +62,21 @@ train_dataloader = create_dataloader(train_data)
 test_dataloader = create_dataloader(test_data, shuffle=False)
 
 
-
-LOAD = False
+LOAD = True
 if LOAD: 
-    model = TransformerModel.load("model/full_rank.pth").to(device)
+    model = TransformerModel(
+        vocab_size=32,
+        seq_len=32,
+        d_model=768,
+        n_heads=12,
+        d_ff=3072,
+        n_layers=12,
+    ).to(device)
+    
+    model.load_state_dict(torch.load("model/full_rank.pth", map_location=device, weights_only=True))
 else: 
     model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="full_rank.pth")
-
-
+print("Model Loaded")
 
 print("\n"*3)
 criterion = nn.CrossEntropyLoss()
@@ -83,41 +90,10 @@ val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion
 table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc]]
 table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc"]
 
-STRATEGIES = {
-    "R10": lambda name, S: 10,
-    "R100": lambda name, S: 100,
-    "R200": lambda name, S: 200,
-    "R300": lambda name, S: 300,
-    "R500": lambda name, S: 500,
-    "R600": lambda name, S: 600,
-    "R700": lambda name, S: 700,
+STRATEGIES = {}
 
-
-    "Energy95": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.95).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy90": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.90).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy85": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.85).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy80": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.80).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy75": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.75).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy70": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.70).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy65": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.65).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy60": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.60).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy55": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.55).nonzero(as_tuple=True)[0][0].item() + 1,
-    "Energy50": lambda name, S: (torch.cumsum(S, dim=0) / torch.sum(S) >= 0.50).nonzero(as_tuple=True)[0][0].item() + 1,
-
-    "Q10": lambda name, S: 10 if "q_proj" in name else len(S),
-    "K10": lambda name, S: 10 if "k_proj" in name else len(S),
-    "V10": lambda name, S: 10 if "v_proj" in name else len(S),
-
-    "Q100": lambda name, S: 100 if "q_proj" in name else len(S),
-    "K100": lambda name, S: 100 if "k_proj" in name else len(S),
-    "V100": lambda name, S: 100 if "v_proj" in name else len(S),
-
-    "Q200": lambda name, S: 200 if "q_proj" in name else len(S),
-    "K200": lambda name, S: 200 if "k_proj" in name else len(S),
-    "V200": lambda name, S: 200 if "v_proj" in name else len(S),
-
-}
-
+STRATEGIES.update({"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in range(0, 100, 1)})
+STRATEGIES.update({"R" + str(i): lambda name, S, i=i: i for i in range(10, 770, 10)})
 
 saved_sv = None
 
