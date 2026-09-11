@@ -62,7 +62,7 @@ train_dataloader = create_dataloader(train_data)
 test_dataloader = create_dataloader(test_data, shuffle=False)
 
 
-LOAD = True
+LOAD = False
 if LOAD: 
     model = Model(
         vocab_size=32,
