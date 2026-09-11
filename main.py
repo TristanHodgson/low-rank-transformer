@@ -25,7 +25,7 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
     singular_values = {}
     rank_table_data = []
     for name, module in list(model.named_modules()):
-        if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
+        if isinstance(module, nn.Linear) and not name.endswith("output"):
             W = module.weight.data
             
             U, D, V = torch.linalg.svd(W, full_matrices=False)

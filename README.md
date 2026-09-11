@@ -1,5 +1,9 @@
 # Low Rank Approximation of Transformers for Decryption of Simple Ciphers
 
+We train a BERT style transformer model trained to decrypt simple cesar ciphers.
+
+Once trained, the weight matrices throughout the architecture are systematically compressed using low-rank approximations. This provides a lightweight framework to benchmark how structural matrix simplification directly impacts total parameter count, computational efficiency, and decryption accuracy.
+
 ## To Run
 
 ### Locally
@@ -7,7 +11,7 @@
 1. [Install PyTorch using the relevant command](https://pytorch.org/get-started/locally/)
 2. Install other requirements: `pip install -r requirements.txt`
 
-### RunPod
+### RunPod + Cloudflare R2
 
 1. Set the `.env` file in the root of the repo as below
 
@@ -22,6 +26,13 @@ R2_BUCKET=
 
 2. Install requirements: `pip install -r requirements.txt`
 3. Run `python deploy/runpod-deploy.py`
+
+## Compression Strategies  
+
+| Strategy Name | Description |
+|---------------|--------------|
+| R100| All matrices compressed to rank 100, except for the final output layer |
+| Energy95 | All matrices are compressed so that they have the top 95% of their singular values by weight |
 
 ## Results
 
@@ -69,6 +80,10 @@ A Pre-LN variant of a BERT-style encoder using ReLU activations and additive lea
 | n_layers   | 12    |
 
 [![PDF Preview](write-up/model-diagram.png)](write-up/model-diagram.pdf)
+
+## Training Data
+
+Training data is from [Hugging face, agentlans/high-quality-english-sentences](https://huggingface.co/datasets/agentlans/high-quality-english-sentences). We extract 32 characters from the start of each sentence (removing those not long enough), encrypt each sentence using one random key shift. We then train on the $(\text{Encrypted text}, \text{Decrypted text})$ pairs.
 
 ## Citeations
 
