@@ -57,7 +57,7 @@ R2_BUCKET=
 
 ## Model
 
-Pre-LN Transformer architecture with additive learned positional embeddings, unmasked multi-head self-attention, two-layer ReLU feed-forward blocks, and a final LayerNorm before the linear output head."
+A Pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings.
 
 | Parameter  | Value |
 | ---------- | ----- |
@@ -69,3 +69,14 @@ Pre-LN Transformer architecture with additive learned positional embeddings, unm
 | n_layers   | 12    |
 
 [![PDF Preview](write-up/model-diagram.png)](write-up/model-diagram.pdf)
+
+## Citeations
+
+* Alammar, Jay. ‘The Illustrated Transformer’. Accessed 1 September 2026. https://jalammar.github.io/illustrated-transformer/.
+* Andrej Karpathy. Let’s Build GPT: From Scratch, in Code, Spelled Out. 2023. 1:56:19. https://www.youtube.com/watch?v=kCc8FmEb1nY.
+* Ba, Jimmy Lei, Jamie Ryan Kiros, and Geoffrey E. Hinton. ‘Layer Normalization’. arXiv:1607.06450. Preprint, arXiv, 21 July 2016. https://doi.org/10.48550/arXiv.1607.06450.
+* Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. ‘BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding’. arXiv:1810.04805. Preprint, arXiv, 24 May 2019. https://doi.org/10.48550/arXiv.1810.04805.
+* ‘The Annotated Transformer’. Accessed 1 September 2026. https://nlp.seas.harvard.edu/annotated-transformer/.
+* Xiong, Ruibin, Yunchang Yang, Di He, et al. ‘On Layer Normalization in the Transformer Architecture’. arXiv:2002.04745. Preprint, arXiv, 29 June 2020. https://doi.org/10.48550/arXiv.2002.04745.
+* YouTube. ‘3blue1brown - Deep Learning’. Accessed 30 August 2026. http://www.youtube.com/playlist?list=PLOH0RpNCcyWRxD8bYrbZbVZrto0U8axHR.
+
