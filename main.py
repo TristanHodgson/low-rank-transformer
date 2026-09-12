@@ -100,7 +100,7 @@ table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "V
 ###       Rank       ###
 ########################
 
-x = [i for i in range(10, 770, 50)]
+x = [i for i in range(10, 770, 10)]
 y, z, w = [], [], []
 
 STRATEGIES = {"R" + str(i): lambda name, S, i=i: i for i in x}
@@ -138,7 +138,7 @@ plt.close()
 ###      Energy      ###
 ########################
 
-x = [i for i in range(0, 100, 5)]
+x = [i for i in range(0, 100, 2)]
 y, z, w = [], [], []
 
 

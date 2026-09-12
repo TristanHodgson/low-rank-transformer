@@ -1,2110 +1,103 @@
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Generating train split:   0%|          | 0/1534699 [00:00<?, ? examples/s]Generating train split:   5%|▌         | 77694/1534699 [00:00<00:02, 532819.25 examples/s]Generating train split:  10%|█         | 155766/1534699 [00:00<00:02, 583048.52 examples/s]Generating train split:  15%|█▌        | 233692/1534699 [00:00<00:02, 603061.86 examples/s]Generating train split:  20%|██        | 311694/1534699 [00:00<00:02, 603927.78 examples/s]Generating train split:  25%|██▌       | 389499/1534699 [00:00<00:01, 621923.61 examples/s]Generating train split:  30%|███       | 467430/1534699 [00:00<00:01, 613461.19 examples/s]Generating train split:  36%|███▌      | 545414/1534699 [00:00<00:01, 608978.14 examples/s]Generating train split:  41%|████      | 623259/1534699 [00:01<00:01, 610956.30 examples/s]Generating train split:  46%|████▌     | 701271/1534699 [00:01<00:01, 645621.41 examples/s]Generating train split:  51%|█████     | 779069/1534699 [00:01<00:01, 632387.80 examples/s]Generating train split:  56%|█████▌    | 856917/1534699 [00:01<00:01, 624997.11 examples/s]Generating train split:  61%|██████    | 934831/1534699 [00:01<00:00, 651475.49 examples/s]Generating train split:  66%|██████▌   | 1013055/1534699 [00:01<00:00, 641397.40 examples/s]Generating train split:  71%|███████   | 1091117/1534699 [00:01<00:00, 633710.42 examples/s]Generating train split:  76%|███████▌  | 1168888/1534699 [00:01<00:00, 621217.41 examples/s]Generating train split:  81%|████████▏ | 1246950/1534699 [00:02<00:00, 614172.57 examples/s]Generating train split:  86%|████████▋ | 1325003/1534699 [00:02<00:00, 613981.99 examples/s]Generating train split:  91%|█████████▏| 1402935/1534699 [00:02<00:00, 608485.71 examples/s]Generating train split:  96%|█████████▋| 1480921/1534699 [00:02<00:00, 610186.00 examples/s]Generating train split: 100%|██████████| 1534699/1534699 [00:02<00:00, 620569.61 examples/s]
-Generating test split:   0%|          | 0/170522 [00:00<?, ? examples/s]Generating test split:  46%|████▌     | 77794/170522 [00:00<00:00, 643865.43 examples/s]Generating test split:  92%|█████████▏| 156033/170522 [00:00<00:00, 630941.50 examples/s]Generating test split: 100%|██████████| 170522/170522 [00:00<00:00, 642988.43 examples/s]
-Map:   0%|          | 0/32768 [00:00<?, ? examples/s]Map:  14%|█▎        | 4504/32768 [00:00<00:00, 44856.52 examples/s]Map:  28%|██▊       | 9065/32768 [00:00<00:00, 45296.36 examples/s]Map:  42%|████▏     | 13673/32768 [00:00<00:00, 45647.56 examples/s]Map:  56%|█████▌    | 18314/32768 [00:00<00:00, 45940.13 examples/s]Map:  70%|███████   | 22941/32768 [00:00<00:00, 46053.77 examples/s]Map:  91%|█████████ | 29793/32768 [00:00<00:00, 45886.13 examples/s]Map: 100%|██████████| 32768/32768 [00:00<00:00, 45746.24 examples/s]
-Map:   0%|          | 0/32768 [00:00<?, ? examples/s]Map:  14%|█▍        | 4581/32768 [00:00<00:00, 45652.44 examples/s]Map:  28%|██▊       | 9188/32768 [00:00<00:00, 45894.65 examples/s]Map:  42%|████▏     | 13818/32768 [00:00<00:00, 46078.36 examples/s]Map:  63%|██████▎   | 20735/32768 [00:00<00:00, 46088.97 examples/s]Map:  77%|███████▋  | 25373/32768 [00:00<00:00, 46177.59 examples/s]Map:  92%|█████████▏| 30000/32768 [00:00<00:00, 46153.46 examples/s]Map: 100%|██████████| 32768/32768 [00:00<00:00, 45948.96 examples/s]
-Filter:   0%|          | 0/32768 [00:00<?, ? examples/s]Filter: 100%|██████████| 32768/32768 [00:00<00:00, 1299253.69 examples/s]
-Filter:   0%|          | 0/32768 [00:00<?, ? examples/s]Filter: 100%|██████████| 32768/32768 [00:00<00:00, 1321744.45 examples/s]
-Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:  11%|█         | 3444/31849 [00:00<00:00, 34312.41 examples/s]Map:  22%|██▏       | 6956/31849 [00:00<00:00, 34781.21 examples/s]Map:  33%|███▎      | 10480/31849 [00:00<00:00, 34985.54 examples/s]Map:  44%|████▍     | 13999/31849 [00:00<00:00, 35062.85 examples/s]Map:  60%|██████    | 19259/31849 [00:00<00:00, 35061.73 examples/s]Map:  77%|███████▋  | 24504/31849 [00:00<00:00, 35020.33 examples/s]Map:  93%|█████████▎| 29734/31849 [00:00<00:00, 34951.67 examples/s]Map: 100%|██████████| 31849/31849 [00:00<00:00, 34900.09 examples/s]
-Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:  11%|█         | 3442/31901 [00:00<00:00, 34291.67 examples/s]Map:  22%|██▏       | 6938/31901 [00:00<00:00, 34678.69 examples/s]Map:  38%|███▊      | 12139/31901 [00:00<00:00, 34669.06 examples/s]Map:  49%|████▉     | 15631/31901 [00:00<00:00, 34752.27 examples/s]Map:  65%|██████▌   | 20791/31901 [00:00<00:00, 34595.89 examples/s]Map:  81%|████████▏ | 25931/31901 [00:00<00:00, 34468.22 examples/s]Map:  97%|█████████▋| 31017/31901 [00:00<00:00, 34267.59 examples/s]Map: 100%|██████████| 31901/31901 [00:00<00:00, 34403.20 examples/s]
-Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:  17%|█▋        | 5261/31849 [00:00<00:00, 52431.17 examples/s]Map:  33%|███▎      | 10549/31849 [00:00<00:00, 52693.22 examples/s]Map:  50%|█████     | 15935/31849 [00:00<00:00, 53222.83 examples/s]Map:  75%|███████▌  | 23915/31849 [00:00<00:00, 53207.05 examples/s]Map: 100%|█████████▉| 31778/31849 [00:00<00:00, 52877.32 examples/s]Map: 100%|██████████| 31849/31849 [00:00<00:00, 52715.77 examples/s]
-Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:  16%|█▋        | 5252/31901 [00:00<00:00, 52347.07 examples/s]Map:  33%|███▎      | 10540/31901 [00:00<00:00, 52656.03 examples/s]Map:  50%|████▉     | 15853/31901 [00:00<00:00, 52868.34 examples/s]Map:  75%|███████▍  | 23830/31901 [00:00<00:00, 53016.14 examples/s]Map:  91%|█████████▏| 29135/31901 [00:00<00:00, 53023.56 examples/s]Map: 100%|██████████| 31901/31901 [00:00<00:00, 52879.17 examples/s]
-Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:  13%|█▎        | 4000/31849 [00:00<00:01, 24138.25 examples/s]Map:  26%|██▌       | 8327/31849 [00:00<00:00, 32992.48 examples/s]Map:  40%|███▉      | 12616/31849 [00:00<00:00, 36927.97 examples/s]Map:  53%|█████▎    | 16982/31849 [00:00<00:00, 39364.73 examples/s]Map:  67%|██████▋   | 21190/31849 [00:00<00:00, 40251.87 examples/s]Map:  86%|████████▌ | 27353/31849 [00:00<00:00, 40602.27 examples/s]Map:  99%|█████████▉| 31659/31849 [00:00<00:00, 41304.06 examples/s]Map: 100%|██████████| 31849/31849 [00:00<00:00, 38626.61 examples/s]
-Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:  14%|█▎        | 4326/31901 [00:00<00:00, 43087.25 examples/s]Map:  32%|███▏      | 10284/31901 [00:00<00:00, 32080.97 examples/s]Map:  46%|████▌     | 14610/31901 [00:00<00:00, 35855.14 examples/s]Map:  59%|█████▊    | 18737/31901 [00:00<00:00, 37613.27 examples/s]Map:  72%|███████▏  | 23000/31901 [00:00<00:00, 38878.09 examples/s]Map:  86%|████████▌ | 27366/31901 [00:00<00:00, 40359.36 examples/s]Map: 100%|█████████▉| 31769/31901 [00:00<00:00, 41485.20 examples/s]Map: 100%|██████████| 31901/31901 [00:00<00:00, 38888.65 examples/s]
-Epoch 01 | Train Loss: 1.7639 | Val Loss: 0.2834 | Val Char Acc: 92.66% | Val Seq Acc: 31.86%
-Epoch 02 | Train Loss: 0.0946 | Val Loss: 0.0535 | Val Char Acc: 98.52% | Val Seq Acc: 91.02%
-Epoch 03 | Train Loss: 0.0204 | Val Loss: 0.0365 | Val Char Acc: 99.01% | Val Seq Acc: 96.00%
-Epoch 04 | Train Loss: 0.0096 | Val Loss: 0.0332 | Val Char Acc: 99.10% | Val Seq Acc: 96.49%
-Epoch 05 | Train Loss: 0.0045 | Val Loss: 0.0322 | Val Char Acc: 99.12% | Val Seq Acc: 97.05%
-Epoch 06 | Train Loss: 0.0045 | Val Loss: 0.0417 | Val Char Acc: 98.93% | Val Seq Acc: 96.57%
-Epoch 07 | Train Loss: 0.0075 | Val Loss: 0.0391 | Val Char Acc: 99.00% | Val Seq Acc: 96.59%
-Epoch 08 | Train Loss: 0.0033 | Val Loss: 0.0359 | Val Char Acc: 99.11% | Val Seq Acc: 97.29%
-Epoch 09 | Train Loss: 0.0033 | Val Loss: 0.0372 | Val Char Acc: 99.12% | Val Seq Acc: 97.33%
-Epoch 10 | Train Loss: 0.0075 | Val Loss: 0.0421 | Val Char Acc: 98.92% | Val Seq Acc: 96.09%
-
-
-
-
-
-
-
-
- ### R10
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |     10 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |     10 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |     10 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |     10 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |     10 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |     10 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |     10 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |     10 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |     10 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |     10 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |     10 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |     10 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |     10 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |     10 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |     10 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |     10 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |     10 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |     10 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |     10 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |     10 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |     10 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |     10 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |     10 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |     10 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |     10 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |     10 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |     10 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |     10 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |     10 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |     10 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |     10 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |     10 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |     10 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |     10 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |     10 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |     10 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |     10 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |     10 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |     10 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |     10 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |     10 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |     10 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |     10 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |     10 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |     10 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |     10 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |     10 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |     10 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |     10 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |     10 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |     10 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |     10 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |     10 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |     10 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |     10 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |     10 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |     10 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |     10 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |     10 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |     10 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |     10 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |     10 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |     10 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |     10 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |     10 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |     10 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |     10 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |     10 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |     10 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |     10 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |     10 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |     10 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R100
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    100 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    100 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    100 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    100 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    100 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    100 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    100 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    100 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    100 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    100 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    100 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    100 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    100 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    100 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    100 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    100 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    100 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    100 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    100 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    100 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    100 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    100 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    100 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    100 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    100 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    100 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    100 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    100 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    100 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    100 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    100 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    100 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    100 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    100 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    100 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    100 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    100 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    100 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    100 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    100 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    100 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    100 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    100 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    100 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    100 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    100 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    100 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    100 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    100 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    100 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    100 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    100 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    100 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    100 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    100 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    100 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    100 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    100 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    100 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    100 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    100 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    100 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    100 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    100 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    100 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    100 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    100 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    100 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    100 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    100 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    100 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    100 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R200
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    200 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    200 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    200 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    200 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    200 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    200 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    200 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    200 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    200 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    200 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    200 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    200 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    200 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    200 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    200 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    200 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    200 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    200 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    200 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    200 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    200 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    200 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    200 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    200 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    200 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    200 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    200 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    200 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    200 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    200 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    200 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    200 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    200 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    200 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    200 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    200 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    200 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    200 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    200 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    200 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    200 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    200 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    200 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    200 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    200 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    200 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    200 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    200 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    200 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    200 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    200 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    200 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    200 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    200 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    200 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    200 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    200 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    200 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    200 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    200 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    200 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    200 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    200 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    200 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    200 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    200 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    200 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    200 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    200 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    200 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    200 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    200 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R300
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    300 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    300 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    300 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    300 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    300 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    300 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    300 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    300 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    300 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    300 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    300 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    300 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    300 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    300 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    300 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    300 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    300 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    300 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    300 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    300 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    300 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    300 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    300 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    300 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    300 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    300 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    300 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    300 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    300 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    300 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    300 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    300 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    300 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    300 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    300 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    300 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    300 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    300 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    300 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    300 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    300 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    300 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    300 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    300 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    300 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    300 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    300 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    300 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    300 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    300 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    300 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    300 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    300 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    300 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    300 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    300 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    300 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    300 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    300 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    300 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    300 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    300 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    300 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    300 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    300 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    300 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    300 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    300 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    300 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    300 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    300 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    300 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R500
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    500 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    500 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    500 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    500 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    500 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    500 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    500 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    500 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    500 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    500 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    500 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    500 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    500 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    500 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    500 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    500 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    500 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    500 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    500 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    500 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    500 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    500 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    500 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    500 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    500 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    500 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    500 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    500 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    500 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    500 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    500 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    500 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    500 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    500 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    500 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    500 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    500 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    500 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    500 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    500 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    500 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    500 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    500 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    500 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    500 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    500 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    500 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    500 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    500 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    500 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    500 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    500 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    500 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    500 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    500 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    500 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    500 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    500 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    500 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    500 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    500 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    500 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    500 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    500 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    500 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    500 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    500 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    500 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    500 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    500 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    500 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    500 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R600
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    600 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    600 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    600 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    600 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    600 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    600 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    600 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    600 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    600 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    600 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    600 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    600 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    600 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    600 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    600 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    600 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    600 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    600 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    600 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    600 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    600 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    600 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    600 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    600 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    600 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    600 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    600 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    600 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    600 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    600 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    600 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    600 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    600 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    600 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    600 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    600 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    600 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    600 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    600 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    600 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    600 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    600 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    600 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    600 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    600 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    600 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    600 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    600 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    600 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    600 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    600 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    600 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    600 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    600 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    600 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    600 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    600 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    600 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    600 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    600 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    600 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    600 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    600 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    600 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    600 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    600 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    600 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    600 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    600 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    600 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    600 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    600 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### R700
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    700 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    700 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    700 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    700 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    700 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    700 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    700 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    700 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    700 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    700 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    700 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    700 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    700 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    700 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    700 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    700 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    700 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    700 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    700 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    700 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    700 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    700 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    700 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    700 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    700 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    700 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    700 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    700 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    700 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    700 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    700 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    700 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    700 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    700 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    700 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    700 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    700 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    700 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    700 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    700 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    700 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    700 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    700 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    700 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    700 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    700 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    700 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    700 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    700 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    700 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    700 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    700 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    700 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    700 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    700 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    700 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    700 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    700 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    700 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    700 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    700 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    700 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    700 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    700 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    700 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    700 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    700 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    700 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    700 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    700 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    700 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    700 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy95
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    589 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    588 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    589 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    589 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    703 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    703 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    589 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    589 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    589 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    589 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    703 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    703 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    589 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    589 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    590 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    589 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    703 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    703 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    588 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    589 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    589 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    590 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    703 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    703 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    589 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    589 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    590 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    589 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    703 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    703 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    588 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    588 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    590 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    590 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    703 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    703 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    588 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    589 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    589 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    590 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    703 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    703 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    589 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    588 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    591 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    590 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    703 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    703 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    589 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    589 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    590 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    590 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    703 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    703 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    589 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    589 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    590 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    590 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    703 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    703 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    589 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    590 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    590 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    590 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    703 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    703 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    590 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    590 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    590 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    590 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    703 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    703 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy90
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    515 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    514 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    516 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    515 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    646 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    646 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    515 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    515 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    515 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    515 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    646 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    646 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    515 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    515 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    516 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    516 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    646 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    646 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    515 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    515 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    516 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    516 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    646 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    646 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    515 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    515 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    516 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    516 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    646 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    646 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    514 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    514 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    516 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    516 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    646 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    646 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    514 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    515 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    516 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    516 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    646 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    646 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    515 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    514 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    517 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    517 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    646 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    646 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    515 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    515 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    516 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    517 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    646 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    646 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    515 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    515 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    516 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    516 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    646 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    646 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    516 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    516 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    517 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    517 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    646 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    645 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    516 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    516 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    516 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    516 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    646 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    645 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy85
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    458 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    458 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    459 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    459 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    594 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    593 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    459 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    458 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    459 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    459 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    594 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    593 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    458 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    459 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    460 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    459 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    594 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    594 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    458 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    458 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    460 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    460 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    594 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    594 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    458 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    458 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    460 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    459 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    594 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    594 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    458 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    457 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    460 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    460 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    594 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    594 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    458 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    458 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    460 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    460 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    594 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    594 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    458 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    458 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    461 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    460 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    594 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    594 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    458 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    458 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    460 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    460 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    594 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    593 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    459 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    459 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    460 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    460 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    594 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    593 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    459 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    459 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    461 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    461 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    593 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    593 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    460 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    460 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    460 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    460 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    593 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    593 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy80
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    411 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    410 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    412 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    412 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    545 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    545 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    411 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    411 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    412 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    412 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    545 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    545 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    411 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    411 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    413 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    412 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    545 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    545 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    411 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    411 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    412 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    413 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    545 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    545 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    411 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    411 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    413 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    412 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    545 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    546 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    411 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    410 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    413 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    413 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    545 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    545 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    410 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    411 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    413 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    412 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    545 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    545 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    411 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    411 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    414 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    413 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    545 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    545 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    411 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    411 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    413 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    413 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    545 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    545 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    412 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    411 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    413 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    413 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    545 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    545 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    412 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    412 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    414 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    414 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    545 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    544 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    413 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    412 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    413 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    413 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    545 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    544 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy75
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    369 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    369 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    371 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    371 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    500 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    499 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    370 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    370 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    370 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    371 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    500 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    499 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    369 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    370 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    371 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    371 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    500 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    500 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    369 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    369 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    371 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    372 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    500 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    500 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    369 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    370 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    372 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    371 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    500 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    500 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    369 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    369 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    371 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    371 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    500 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    500 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    369 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    369 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    371 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    371 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    500 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    500 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    369 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    369 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    372 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    372 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    500 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    500 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    369 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    369 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    372 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    372 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    499 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    499 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    370 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    370 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    372 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    372 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    499 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    499 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    371 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    371 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    372 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    372 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    499 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    499 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    371 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    371 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    372 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    372 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    499 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    498 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy70
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    332 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    332 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    333 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    333 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    457 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    456 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    332 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    332 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    333 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    333 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    457 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    456 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    332 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    332 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    334 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    334 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    456 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    457 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    332 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    332 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    334 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    334 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    457 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    457 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    332 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    332 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    334 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    334 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    456 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    457 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    332 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    331 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    334 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    334 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    457 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    457 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    331 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    332 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    334 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    334 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    456 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    456 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    332 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    332 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    335 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    335 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    457 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    456 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    332 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    332 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    335 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    334 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    456 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    456 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    333 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    332 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    335 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    335 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    456 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    456 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    334 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    333 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    335 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    335 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    456 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    455 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    334 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    334 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    335 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    334 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    456 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    455 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy65
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    298 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    298 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    299 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    299 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    416 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    415 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    298 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    298 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    299 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    299 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    415 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    415 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    298 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    298 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    300 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    300 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    415 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    416 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    298 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    298 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    300 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    300 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    415 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    415 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    298 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    298 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    300 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    300 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    415 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    416 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    297 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    297 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    300 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    300 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    415 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    415 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    297 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    297 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    300 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    300 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    415 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    415 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    298 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    298 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    301 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    301 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    415 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    415 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    298 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    298 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    301 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    301 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    415 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    415 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    299 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    298 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    300 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    301 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    415 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    415 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    300 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    299 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    301 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    301 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    415 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    414 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    300 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    300 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    301 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    300 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    415 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    414 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy60
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    266 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    266 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    268 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    268 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    376 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    375 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    267 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    267 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    268 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    268 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    376 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    376 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    266 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    267 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    269 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    268 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    376 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    376 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    266 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    266 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    268 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    269 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    376 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    376 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    266 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    266 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    269 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    268 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    376 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    376 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    266 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    266 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    269 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    268 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    376 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    376 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    266 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    266 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    269 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    268 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    376 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    376 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    266 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    266 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    269 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    269 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    376 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    376 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    266 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    266 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    269 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    269 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    376 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    376 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    267 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    267 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    269 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    269 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    376 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    375 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    268 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    268 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    270 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    270 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    375 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    375 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    269 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    268 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    269 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    269 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    375 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    374 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy55
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    237 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    237 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    238 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    238 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    338 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    338 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    237 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    237 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    238 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    238 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    338 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    338 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    237 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    237 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    239 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    239 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    338 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    338 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    237 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    237 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    239 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    239 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    338 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    338 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    237 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    237 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    240 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    239 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    338 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    339 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    236 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    236 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    240 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    239 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    338 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    338 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    236 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    236 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    239 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    239 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    338 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    338 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    237 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    237 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    240 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    240 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    338 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    338 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    237 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    237 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    240 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    240 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    338 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    338 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    238 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    237 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    240 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    240 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    338 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    337 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    239 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    239 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    241 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    240 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    338 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    337 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    239 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    239 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    240 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    240 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    337 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    336 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Energy50
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    209 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    209 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    211 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    211 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    302 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    302 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    210 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    210 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    211 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    211 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    302 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    302 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    209 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    209 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    212 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    211 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    302 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    302 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    209 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    209 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    212 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    212 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    302 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    302 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    209 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    209 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    212 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    211 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    302 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    302 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    209 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    209 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    212 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    211 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    302 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    302 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    208 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    209 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    212 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    212 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    302 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    302 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    209 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    209 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    212 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    212 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    302 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    302 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    209 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    209 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    212 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    212 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    302 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    301 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    210 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    210 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    212 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    212 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    302 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    301 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    211 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    211 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    213 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    213 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    301 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    300 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    212 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    211 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    212 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    212 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    301 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    300 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Q10
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |     10 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |     10 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |     10 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |     10 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |     10 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |     10 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |     10 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |     10 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |     10 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |     10 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |     10 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |     10 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### K10
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |     10 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |     10 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |     10 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |     10 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |     10 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |     10 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |     10 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |     10 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |     10 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |     10 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |     10 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |     10 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### V10
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |     10 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |     10 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |     10 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |     10 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |     10 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |     10 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |     10 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |     10 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |     10 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |     10 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |     10 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |     10 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Q100
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    100 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    100 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    100 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    100 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    100 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    100 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    100 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    100 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    100 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    100 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    100 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    100 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### K100
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    100 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    100 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    100 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    100 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    100 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    100 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    100 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    100 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    100 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    100 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    100 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    100 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### V100
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    100 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    100 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    100 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    100 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    100 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    100 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    100 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    100 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    100 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    100 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    100 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    100 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### Q200
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    200 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    200 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    200 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    200 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    200 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    200 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    200 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    200 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    200 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    200 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    200 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    200 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### K200
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    200 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    768 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    200 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    768 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    200 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    768 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    200 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    768 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    200 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    768 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    200 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    768 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    200 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    768 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    200 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    768 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    200 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    768 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    200 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    768 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    200 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    768 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    200 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    768 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-
-
-
-
- ### V200
-| Layer                         |   Rank |   Original Rank | Module Name           |
-|-------------------------------|--------|-----------------|-----------------------|
-| Block 0.Sa.Q Projection       |    768 |             768 | blocks.0.sa.q_proj    |
-| Block 0.Sa.K Projection       |    768 |             768 | blocks.0.sa.k_proj    |
-| Block 0.Sa.V Projection       |    200 |             768 | blocks.0.sa.v_proj    |
-| Block 0.Sa.Output Projection  |    768 |             768 | blocks.0.sa.out_proj  |
-| Block 0.Ffwd.Net.0            |    768 |             768 | blocks.0.ffwd.net.0   |
-| Block 0.Ffwd.Net.2            |    768 |             768 | blocks.0.ffwd.net.2   |
-| Block 1.Sa.Q Projection       |    768 |             768 | blocks.1.sa.q_proj    |
-| Block 1.Sa.K Projection       |    768 |             768 | blocks.1.sa.k_proj    |
-| Block 1.Sa.V Projection       |    200 |             768 | blocks.1.sa.v_proj    |
-| Block 1.Sa.Output Projection  |    768 |             768 | blocks.1.sa.out_proj  |
-| Block 1.Ffwd.Net.0            |    768 |             768 | blocks.1.ffwd.net.0   |
-| Block 1.Ffwd.Net.2            |    768 |             768 | blocks.1.ffwd.net.2   |
-| Block 2.Sa.Q Projection       |    768 |             768 | blocks.2.sa.q_proj    |
-| Block 2.Sa.K Projection       |    768 |             768 | blocks.2.sa.k_proj    |
-| Block 2.Sa.V Projection       |    200 |             768 | blocks.2.sa.v_proj    |
-| Block 2.Sa.Output Projection  |    768 |             768 | blocks.2.sa.out_proj  |
-| Block 2.Ffwd.Net.0            |    768 |             768 | blocks.2.ffwd.net.0   |
-| Block 2.Ffwd.Net.2            |    768 |             768 | blocks.2.ffwd.net.2   |
-| Block 3.Sa.Q Projection       |    768 |             768 | blocks.3.sa.q_proj    |
-| Block 3.Sa.K Projection       |    768 |             768 | blocks.3.sa.k_proj    |
-| Block 3.Sa.V Projection       |    200 |             768 | blocks.3.sa.v_proj    |
-| Block 3.Sa.Output Projection  |    768 |             768 | blocks.3.sa.out_proj  |
-| Block 3.Ffwd.Net.0            |    768 |             768 | blocks.3.ffwd.net.0   |
-| Block 3.Ffwd.Net.2            |    768 |             768 | blocks.3.ffwd.net.2   |
-| Block 4.Sa.Q Projection       |    768 |             768 | blocks.4.sa.q_proj    |
-| Block 4.Sa.K Projection       |    768 |             768 | blocks.4.sa.k_proj    |
-| Block 4.Sa.V Projection       |    200 |             768 | blocks.4.sa.v_proj    |
-| Block 4.Sa.Output Projection  |    768 |             768 | blocks.4.sa.out_proj  |
-| Block 4.Ffwd.Net.0            |    768 |             768 | blocks.4.ffwd.net.0   |
-| Block 4.Ffwd.Net.2            |    768 |             768 | blocks.4.ffwd.net.2   |
-| Block 5.Sa.Q Projection       |    768 |             768 | blocks.5.sa.q_proj    |
-| Block 5.Sa.K Projection       |    768 |             768 | blocks.5.sa.k_proj    |
-| Block 5.Sa.V Projection       |    200 |             768 | blocks.5.sa.v_proj    |
-| Block 5.Sa.Output Projection  |    768 |             768 | blocks.5.sa.out_proj  |
-| Block 5.Ffwd.Net.0            |    768 |             768 | blocks.5.ffwd.net.0   |
-| Block 5.Ffwd.Net.2            |    768 |             768 | blocks.5.ffwd.net.2   |
-| Block 6.Sa.Q Projection       |    768 |             768 | blocks.6.sa.q_proj    |
-| Block 6.Sa.K Projection       |    768 |             768 | blocks.6.sa.k_proj    |
-| Block 6.Sa.V Projection       |    200 |             768 | blocks.6.sa.v_proj    |
-| Block 6.Sa.Output Projection  |    768 |             768 | blocks.6.sa.out_proj  |
-| Block 6.Ffwd.Net.0            |    768 |             768 | blocks.6.ffwd.net.0   |
-| Block 6.Ffwd.Net.2            |    768 |             768 | blocks.6.ffwd.net.2   |
-| Block 7.Sa.Q Projection       |    768 |             768 | blocks.7.sa.q_proj    |
-| Block 7.Sa.K Projection       |    768 |             768 | blocks.7.sa.k_proj    |
-| Block 7.Sa.V Projection       |    200 |             768 | blocks.7.sa.v_proj    |
-| Block 7.Sa.Output Projection  |    768 |             768 | blocks.7.sa.out_proj  |
-| Block 7.Ffwd.Net.0            |    768 |             768 | blocks.7.ffwd.net.0   |
-| Block 7.Ffwd.Net.2            |    768 |             768 | blocks.7.ffwd.net.2   |
-| Block 8.Sa.Q Projection       |    768 |             768 | blocks.8.sa.q_proj    |
-| Block 8.Sa.K Projection       |    768 |             768 | blocks.8.sa.k_proj    |
-| Block 8.Sa.V Projection       |    200 |             768 | blocks.8.sa.v_proj    |
-| Block 8.Sa.Output Projection  |    768 |             768 | blocks.8.sa.out_proj  |
-| Block 8.Ffwd.Net.0            |    768 |             768 | blocks.8.ffwd.net.0   |
-| Block 8.Ffwd.Net.2            |    768 |             768 | blocks.8.ffwd.net.2   |
-| Block 9.Sa.Q Projection       |    768 |             768 | blocks.9.sa.q_proj    |
-| Block 9.Sa.K Projection       |    768 |             768 | blocks.9.sa.k_proj    |
-| Block 9.Sa.V Projection       |    200 |             768 | blocks.9.sa.v_proj    |
-| Block 9.Sa.Output Projection  |    768 |             768 | blocks.9.sa.out_proj  |
-| Block 9.Ffwd.Net.0            |    768 |             768 | blocks.9.ffwd.net.0   |
-| Block 9.Ffwd.Net.2            |    768 |             768 | blocks.9.ffwd.net.2   |
-| Block 10.Sa.Q Projection      |    768 |             768 | blocks.10.sa.q_proj   |
-| Block 10.Sa.K Projection      |    768 |             768 | blocks.10.sa.k_proj   |
-| Block 10.Sa.V Projection      |    200 |             768 | blocks.10.sa.v_proj   |
-| Block 10.Sa.Output Projection |    768 |             768 | blocks.10.sa.out_proj |
-| Block 10.Ffwd.Net.0           |    768 |             768 | blocks.10.ffwd.net.0  |
-| Block 10.Ffwd.Net.2           |    768 |             768 | blocks.10.ffwd.net.2  |
-| Block 11.Sa.Q Projection      |    768 |             768 | blocks.11.sa.q_proj   |
-| Block 11.Sa.K Projection      |    768 |             768 | blocks.11.sa.k_proj   |
-| Block 11.Sa.V Projection      |    200 |             768 | blocks.11.sa.v_proj   |
-| Block 11.Sa.Output Projection |    768 |             768 | blocks.11.sa.out_proj |
-| Block 11.Ffwd.Net.0           |    768 |             768 | blocks.11.ffwd.net.0  |
-| Block 11.Ffwd.Net.2           |    768 |             768 | blocks.11.ffwd.net.2  |
-| Strategy   |   Train Loss |   Train Char Acc |   Train Seq Acc |   Val Loss |   Val Char Acc |   Val Seq Acc |
-|------------|--------------|------------------|-----------------|------------|----------------|---------------|
-| Full       |   0.00652514 |         0.998196 |        0.986436 |  0.0421419 |       0.989236 |      0.960942 |
-| R10        |   2.56903    |         0.330807 |        0        |  2.57257   |       0.329191 |      0        |
-| R100       |   0.491093   |         0.902265 |        0.252221 |  0.508335  |       0.896304 |      0.24924  |
-| R200       |   0.0615376  |         0.987267 |        0.850419 |  0.0851891 |       0.979258 |      0.831729 |
-| R300       |   0.0151412  |         0.996512 |        0.96182  |  0.0414493 |       0.988339 |      0.937212 |
-| R500       |   0.00631302 |         0.998372 |        0.985306 |  0.0370988 |       0.989927 |      0.960158 |
-| R600       |   0.00598713 |         0.998397 |        0.986938 |  0.0385707 |       0.989804 |      0.961036 |
-| R700       |   0.00617911 |         0.998319 |        0.986844 |  0.0404629 |       0.989511 |      0.961224 |
-| Energy95   |   0.00624856 |         0.998291 |        0.986593 |  0.0405921 |       0.989482 |      0.960879 |
-| Energy90   |   0.00622869 |         0.998324 |        0.986562 |  0.039608  |       0.989551 |      0.96044  |
-| Energy85   |   0.00629095 |         0.99829  |        0.985463 |  0.0383901 |       0.989779 |      0.960597 |
-| Energy80   |   0.0069521  |         0.998142 |        0.983673 |  0.0383529 |       0.989624 |      0.958904 |
-| Energy75   |   0.00767097 |         0.997938 |        0.981852 |  0.0380986 |       0.989545 |      0.957588 |
-| Energy70   |   0.00838877 |         0.997797 |        0.978838 |  0.0380116 |       0.989404 |      0.955205 |
-| Energy65   |   0.00994936 |         0.997402 |        0.974724 |  0.0386123 |       0.989085 |      0.951005 |
-| Energy60   |   0.0125511  |         0.996804 |        0.968131 |  0.0404257 |       0.988551 |      0.94414  |
-| Energy55   |   0.0163492  |         0.995901 |        0.957989 |  0.0428237 |       0.98778  |      0.934673 |
-| Energy50   |   0.0237214  |         0.994198 |        0.937926 |  0.049075  |       0.986249 |      0.915614 |
-| Q10        |   0.0586851  |         0.981165 |        0.88637  |  0.0905526 |       0.973772 |      0.871791 |
-| K10        |   0.0997652  |         0.969778 |        0.838456 |  0.130395  |       0.962834 |      0.826024 |
-| V10        |   0.0738639  |         0.977497 |        0.804986 |  0.123302  |       0.965632 |      0.780759 |
-| Q100       |   0.00827258 |         0.997644 |        0.983108 |  0.0410541 |       0.989198 |      0.960377 |
-| K100       |   0.00895643 |         0.997338 |        0.98226  |  0.0416287 |       0.989152 |      0.959813 |
-| V100       |   0.0101268  |         0.997052 |        0.974222 |  0.0477865 |       0.987523 |      0.948904 |
-| Q200       |   0.00721577 |         0.99796  |        0.984803 |  0.0414365 |       0.989271 |      0.961067 |
-| K200       |   0.00719378 |         0.997969 |        0.984803 |  0.0412741 |       0.989312 |      0.960816 |
-| V200       |   0.00783361 |         0.997743 |        0.981915 |  0.0445015 |       0.988535 |      0.956522 |
+Generating train split:   0%|          | 0/1534699 [00:00<?, ? examples/s]Generating train split:   5%|▌         | 77694/1534699 [00:00<00:03, 376625.13 examples/s]Generating train split:  10%|█         | 155766/1534699 [00:00<00:03, 385132.48 examples/s]Generating train split:  15%|█▌        | 233692/1534699 [00:00<00:03, 388421.36 examples/s]Generating train split:  20%|██        | 311694/1534699 [00:00<00:03, 384865.58 examples/s]Generating train split:  25%|██▌       | 389499/1534699 [00:00<00:02, 397472.77 examples/s]Generating train split:  30%|███       | 467430/1534699 [00:01<00:02, 396053.94 examples/s]Generating train split:  36%|███▌      | 545414/1534699 [00:01<00:02, 397449.55 examples/s]Generating train split:  41%|████      | 623259/1534699 [00:01<00:03, 248073.80 examples/s]Generating train split:  46%|████▌     | 701271/1534699 [00:02<00:03, 276454.36 examples/s]Generating train split:  51%|█████     | 779069/1534699 [00:02<00:02, 303829.57 examples/s]Generating train split:  56%|█████▌    | 856917/1534699 [00:02<00:02, 264493.55 examples/s]Generating train split:  61%|██████    | 934831/1534699 [00:02<00:02, 280429.41 examples/s]Generating train split:  66%|██████▌   | 1013055/1534699 [00:03<00:01, 295896.77 examples/s]Generating train split:  71%|███████   | 1091117/1534699 [00:03<00:01, 312223.53 examples/s]Generating train split:  76%|███████▌  | 1168888/1534699 [00:03<00:01, 309956.34 examples/s]Generating train split:  81%|████████▏ | 1246950/1534699 [00:03<00:00, 319089.64 examples/s]Generating train split:  86%|████████▋ | 1325003/1534699 [00:04<00:00, 339845.80 examples/s]Generating train split:  91%|█████████▏| 1402935/1534699 [00:04<00:00, 354470.69 examples/s]Generating train split:  96%|█████████▋| 1480921/1534699 [00:04<00:00, 368152.90 examples/s]Generating train split: 100%|██████████| 1534699/1534699 [00:04<00:00, 390394.70 examples/s]Generating train split: 100%|██████████| 1534699/1534699 [00:04<00:00, 332494.18 examples/s]
+Generating test split:   0%|          | 0/170522 [00:00<?, ? examples/s]Generating test split:  46%|████▌     | 77794/170522 [00:00<00:00, 380340.77 examples/s]Generating test split:  92%|█████████▏| 156033/170522 [00:00<00:00, 387266.98 examples/s]Generating test split: 100%|██████████| 170522/170522 [00:00<00:00, 396707.02 examples/s]
+Map:   0%|          | 0/32768 [00:00<?, ? examples/s]Map:   9%|▉         | 2943/32768 [00:00<00:01, 29218.95 examples/s]Map:  18%|█▊        | 5947/32768 [00:00<00:00, 29694.82 examples/s]Map:  27%|██▋       | 8949/32768 [00:00<00:00, 29840.59 examples/s]Map:  37%|███▋      | 12000/32768 [00:00<00:00, 30075.13 examples/s]Map:  46%|████▌     | 15064/32768 [00:00<00:00, 30273.89 examples/s]Map:  55%|█████▌    | 18121/32768 [00:00<00:00, 30372.07 examples/s]Map:  69%|██████▊   | 22525/32768 [00:00<00:00, 29942.38 examples/s]Map:  78%|███████▊  | 25600/32768 [00:00<00:00, 30173.33 examples/s]Map:  87%|████████▋ | 28667/32768 [00:00<00:00, 30316.27 examples/s]Map:  97%|█████████▋| 31735/32768 [00:01<00:00, 30420.42 examples/s]Map: 100%|██████████| 32768/32768 [00:01<00:00, 30138.67 examples/s]
+Map:   0%|          | 0/32768 [00:00<?, ? examples/s]Map:   9%|▉         | 2966/32768 [00:00<00:01, 29501.98 examples/s]Map:  18%|█▊        | 5963/32768 [00:00<00:00, 29770.32 examples/s]Map:  27%|██▋       | 8951/32768 [00:00<00:00, 29813.28 examples/s]Map:  36%|███▋      | 11942/32768 [00:00<00:00, 29848.61 examples/s]Map:  50%|████▉     | 16378/32768 [00:00<00:00, 29717.43 examples/s]Map:  64%|██████▎   | 20817/32768 [00:00<00:00, 29662.16 examples/s]Map:  73%|███████▎  | 23803/32768 [00:00<00:00, 29713.69 examples/s]Map:  85%|████████▌ | 28000/32768 [00:00<00:00, 29039.36 examples/s]Map:  95%|█████████▍| 30999/32768 [00:01<00:00, 29282.38 examples/s]Map: 100%|██████████| 32768/32768 [00:01<00:00, 29420.75 examples/s]
+Filter:   0%|          | 0/32768 [00:00<?, ? examples/s]Filter: 100%|██████████| 32768/32768 [00:00<00:00, 868498.09 examples/s]
+Filter:   0%|          | 0/32768 [00:00<?, ? examples/s]Filter: 100%|██████████| 32768/32768 [00:00<00:00, 888772.91 examples/s]
+Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:   7%|▋         | 2209/31849 [00:00<00:01, 21958.61 examples/s]Map:  14%|█▍        | 4504/31849 [00:00<00:01, 22534.84 examples/s]Map:  21%|██▏       | 6799/31849 [00:00<00:01, 22721.08 examples/s]Map:  29%|██▊       | 9082/31849 [00:00<00:01, 22759.06 examples/s]Map:  36%|███▌      | 11397/31849 [00:00<00:00, 22896.67 examples/s]Map:  46%|████▋     | 14807/31849 [00:00<00:00, 22819.69 examples/s]Map:  57%|█████▋    | 18227/31849 [00:00<00:00, 22808.68 examples/s]Map:  68%|██████▊   | 21632/31849 [00:00<00:00, 22765.83 examples/s]Map:  79%|███████▊  | 25020/31849 [00:01<00:00, 22703.31 examples/s]Map:  89%|████████▉ | 28409/31849 [00:01<00:00, 22663.02 examples/s]Map: 100%|█████████▉| 31818/31849 [00:01<00:00, 22679.83 examples/s]Map: 100%|██████████| 31849/31849 [00:01<00:00, 22678.15 examples/s]
+Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:   7%|▋         | 2246/31901 [00:00<00:01, 22340.39 examples/s]Map:  14%|█▍        | 4555/31901 [00:00<00:01, 22774.83 examples/s]Map:  22%|██▏       | 6869/31901 [00:00<00:01, 22935.61 examples/s]Map:  32%|███▏      | 10302/31901 [00:00<00:00, 22906.11 examples/s]Map:  43%|████▎     | 13694/31901 [00:00<00:00, 22781.17 examples/s]Map:  54%|█████▎    | 17074/31901 [00:00<00:00, 22685.64 examples/s]Map:  64%|██████▍   | 20429/31901 [00:00<00:00, 22571.76 examples/s]Map:  75%|███████▍  | 23825/31901 [00:01<00:00, 22591.72 examples/s]Map:  85%|████████▌ | 27208/31901 [00:01<00:00, 22573.69 examples/s]Map:  96%|█████████▌| 30580/31901 [00:01<00:00, 22540.98 examples/s]Map: 100%|██████████| 31901/31901 [00:01<00:00, 22614.03 examples/s]
+Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:  10%|█         | 3264/31849 [00:00<00:00, 32456.79 examples/s]Map:  21%|██        | 6610/31849 [00:00<00:00, 33040.15 examples/s]Map:  31%|███▏      | 10000/31849 [00:00<00:00, 33128.63 examples/s]Map:  42%|████▏     | 13386/31849 [00:00<00:00, 33406.68 examples/s]Map:  53%|█████▎    | 16844/31849 [00:00<00:00, 33824.30 examples/s]Map:  69%|██████▉   | 21985/31849 [00:00<00:00, 34015.08 examples/s]Map:  85%|████████▍ | 26994/31849 [00:00<00:00, 33772.79 examples/s]Map: 100%|██████████| 31849/31849 [00:00<00:00, 33758.92 examples/s]Map: 100%|██████████| 31849/31849 [00:00<00:00, 33548.30 examples/s]
+Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:  10%|▉         | 3160/31901 [00:00<00:00, 31414.81 examples/s]Map:  21%|██        | 6551/31901 [00:00<00:00, 32874.25 examples/s]Map:  31%|███▏      | 9984/31901 [00:00<00:00, 33532.56 examples/s]Map:  42%|████▏     | 13354/31901 [00:00<00:00, 33595.71 examples/s]Map:  53%|█████▎    | 16787/31901 [00:00<00:00, 33856.38 examples/s]Map:  66%|██████▌   | 21000/31901 [00:00<00:00, 31181.37 examples/s]Map:  78%|███████▊  | 24986/31901 [00:00<00:00, 29414.53 examples/s]Map:  88%|████████▊ | 28012/31901 [00:00<00:00, 29639.86 examples/s]Map:  98%|█████████▊| 31333/31901 [00:01<00:00, 30623.44 examples/s]Map: 100%|██████████| 31901/31901 [00:01<00:00, 31202.91 examples/s]
+Map:   0%|          | 0/31849 [00:00<?, ? examples/s]Map:   0%|          | 136/31849 [00:00<00:32, 963.09 examples/s]Map:   9%|▊         | 2755/31849 [00:00<00:02, 13649.44 examples/s]Map:  17%|█▋        | 5516/31849 [00:00<00:01, 19283.15 examples/s]Map:  26%|██▋       | 8385/31849 [00:00<00:01, 22338.53 examples/s]Map:  35%|███▌      | 11177/31849 [00:00<00:00, 24248.44 examples/s]Map:  44%|████▍     | 14000/31849 [00:00<00:00, 25376.74 examples/s]Map:  53%|█████▎    | 16981/31849 [00:00<00:00, 26784.87 examples/s]Map:  62%|██████▏   | 19771/31849 [00:00<00:00, 27130.98 examples/s]Map:  71%|███████   | 22559/31849 [00:00<00:00, 27358.10 examples/s]Map:  80%|███████▉  | 25457/31849 [00:01<00:00, 27489.87 examples/s]Map:  93%|█████████▎| 29681/31849 [00:01<00:00, 27747.92 examples/s]Map: 100%|██████████| 31849/31849 [00:01<00:00, 24683.00 examples/s]
+Map:   0%|          | 0/31901 [00:00<?, ? examples/s]Map:   9%|▉         | 2927/31901 [00:00<00:00, 29065.53 examples/s]Map:  22%|██▏       | 7079/31901 [00:00<00:01, 18436.78 examples/s]Map:  31%|███▏      | 10000/31901 [00:00<00:01, 21437.50 examples/s]Map:  40%|███▉      | 12703/31901 [00:00<00:00, 23092.27 examples/s]Map:  53%|█████▎    | 16903/31901 [00:00<00:00, 24999.29 examples/s]Map:  62%|██████▏   | 19646/31901 [00:00<00:00, 25655.30 examples/s]Map:  70%|███████   | 22486/31901 [00:00<00:00, 26293.86 examples/s]Map:  79%|███████▉  | 25237/31901 [00:01<00:00, 26637.30 examples/s]Map:  88%|████████▊ | 28000/31901 [00:01<00:00, 26920.34 examples/s]Map:  97%|█████████▋| 30966/31901 [00:01<00:00, 27718.08 examples/s]Map: 100%|██████████| 31901/31901 [00:01<00:00, 25247.54 examples/s]
+Epoch 01 | Train Loss: 1.7970 | Val Loss: 0.3257 | Val Char Acc: 91.36% | Val Seq Acc: 22.71%
+Epoch 02 | Train Loss: 0.1063 | Val Loss: 0.0586 | Val Char Acc: 98.38% | Val Seq Acc: 90.44%
+Epoch 03 | Train Loss: 0.0210 | Val Loss: 0.0484 | Val Char Acc: 98.69% | Val Seq Acc: 94.66%
+Epoch 04 | Train Loss: 0.0100 | Val Loss: 0.0409 | Val Char Acc: 98.93% | Val Seq Acc: 96.09%
+Epoch 05 | Train Loss: 0.0060 | Val Loss: 0.0389 | Val Char Acc: 99.00% | Val Seq Acc: 96.24%
+Epoch 06 | Train Loss: 0.0028 | Val Loss: 0.0370 | Val Char Acc: 99.08% | Val Seq Acc: 96.97%
+Epoch 07 | Train Loss: 0.0036 | Val Loss: 0.0393 | Val Char Acc: 99.02% | Val Seq Acc: 96.71%
+Epoch 08 | Train Loss: 0.0081 | Val Loss: 0.0449 | Val Char Acc: 98.88% | Val Seq Acc: 96.17%
+Epoch 09 | Train Loss: 0.0064 | Val Loss: 0.0383 | Val Char Acc: 99.06% | Val Seq Acc: 97.10%
+Epoch 10 | Train Loss: 0.0065 | Val Loss: 0.0409 | Val Char Acc: 98.98% | Val Seq Acc: 96.82%
+Model Loaded
+
+
+
+
+Energy0
+Energy5
+Energy10
+Energy15
+Energy20
+Energy25
+Energy30
+Energy35
+Energy40
+Energy45
+Energy50
+Energy55
+Energy60
+Energy65
+Energy70
+Energy75
+Energy80
+Energy85
+Energy90
+Energy95
+R10
+R60
+R110
+R160
+R210
+R260
+R310
+R360
+R410
+R460
+R510
+R560
+R610
+R660
+R710
+R760
+| Strategy   |   Train Loss |   Train Char Acc |   Train Seq Acc |   Val Loss |   Val Char Acc |   Val Seq Acc |   Model Parameters Count |
+|------------|--------------|------------------|-----------------|------------|----------------|---------------|--------------------------|
+| Full       |   0.00332599 |         0.999201 |     0.99303     |  0.0409495 |       0.989817 |   0.968246    |                 85129760 |
+| Energy0    |   3.18069    |         0.196566 |     0           |  3.18285   |       0.196095 |   0           |                   360992 |
+| Energy5    |   2.11861    |         0.461214 |     0           |  2.12325   |       0.45987  |   0           |                  3754016 |
+| Energy10   |   1.56346    |         0.62345  |     0.000596565 |  1.5709    |       0.620653 |   0.000595593 |                  7522592 |
+| Energy15   |   1.12232    |         0.743981 |     0.0135012   |  1.13269   |       0.740971 |   0.0151719   |                 11419424 |
+| Energy20   |   0.733543   |         0.840802 |     0.092656    |  0.747055  |       0.836379 |   0.0931005   |                 15518240 |
+| Energy25   |   0.449714   |         0.903844 |     0.259663    |  0.466772  |       0.897538 |   0.256136    |                 19774496 |
+| Energy30   |   0.259762   |         0.944557 |     0.478006    |  0.279951  |       0.937235 |   0.46986     |                 24138272 |
+| Energy35   |   0.141369   |         0.969256 |     0.67999     |  0.164211  |       0.961526 |   0.666562    |                 28726304 |
+| Energy40   |   0.0770271  |         0.982951 |     0.811423    |  0.102231  |       0.974632 |   0.795273    |                 33435680 |
+| Energy45   |   0.0440232  |         0.989933 |     0.890232    |  0.0713392 |       0.981096 |   0.87154     |                 38383136 |
+| Energy50   |   0.0275296  |         0.993564 |     0.928538    |  0.0562495 |       0.984376 |   0.90621     |                 43535648 |
+| Energy55   |   0.0176528  |         0.995906 |     0.954567    |  0.0476842 |       0.986447 |   0.928748    |                 48897824 |
+| Energy60   |   0.0119428  |         0.99719  |     0.970266    |  0.0428606 |       0.987762 |   0.944359    |                 54557216 |
+| Energy65   |   0.00877924 |         0.997931 |     0.978461    |  0.0404494 |       0.988598 |   0.9516      |                 60492320 |
+| Energy70   |   0.00662666 |         0.998441 |     0.984332    |  0.0389707 |       0.989116 |   0.957682    |                 66807584 |
+| Energy75   |   0.00496924 |         0.998843 |     0.988791    |  0.0376105 |       0.989758 |   0.962509    |                 73559840 |
+| Energy80   |   0.00430579 |         0.998976 |     0.990172    |  0.0376302 |       0.990029 |   0.964358    |                 80789024 |
+| Energy85   |   0.00391541 |         0.999093 |     0.990957    |  0.038126  |       0.990039 |   0.965424    |                 88772384 |
+| Energy90   |   0.00347743 |         0.999178 |     0.992339    |  0.0386118 |       0.990126 |   0.966772    |                 97729568 |
+| Energy95   |   0.00342841 |         0.999166 |     0.992559    |  0.0397277 |       0.989974 |   0.967493    |                108438560 |
+| R10        |   2.58474    |         0.335053 |     0           |  2.58853   |       0.333271 |   0           |                  1853984 |
+| R60        |   1.16201    |         0.742499 |     0.0135012   |  1.17259   |       0.739419 |   0.0147331   |                 10148384 |
+| R110       |   0.46489    |         0.907164 |     0.268643    |  0.482081  |       0.900545 |   0.263346    |                 18442784 |
+| R160       |   0.169138   |         0.966494 |     0.6463      |  0.191704  |       0.958582 |   0.634745    |                 26737184 |
+| R210       |   0.0628254  |         0.986835 |     0.85111     |  0.0894962 |       0.977839 |   0.831573    |                 35031584 |
+| R260       |   0.027136   |         0.994296 |     0.934535    |  0.0556542 |       0.984932 |   0.910379    |                 43325984 |
+| R310       |   0.0149479  |         0.996787 |     0.963986    |  0.0446103 |       0.987409 |   0.93693     |                 51620384 |
+| R360       |   0.00906583 |         0.998063 |     0.978681    |  0.0395545 |       0.988783 |   0.951255    |                 59914784 |
+| R410       |   0.00633389 |         0.998629 |     0.985996    |  0.0376929 |       0.98946  |   0.958026    |                 68209184 |
+| R460       |   0.00489015 |         0.998923 |     0.989168    |  0.0370868 |       0.989833 |   0.962634    |                 76503584 |
+| R510       |   0.00396089 |         0.999103 |     0.991334    |  0.036872  |       0.990129 |   0.965456    |                 84797984 |
+| R560       |   0.00371487 |         0.999152 |     0.991931    |  0.0376033 |       0.990096 |   0.966083    |                 93092384 |
+| R610       |   0.00355728 |         0.999173 |     0.992433    |  0.0383939 |       0.99008  |   0.966553    |                101386784 |
+| R660       |   0.00340231 |         0.999189 |     0.992747    |  0.0390228 |       0.990043 |   0.967525    |                109681184 |
+| R710       |   0.00337294 |         0.99918  |     0.992621    |  0.03984   |       0.989959 |   0.967556    |                117975584 |
+| R760       |   0.00330195 |         0.999199 |     0.992935    |  0.0404524 |       0.989914 |   0.968151    |                126269984 |
