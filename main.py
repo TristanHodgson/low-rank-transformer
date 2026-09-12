@@ -90,8 +90,8 @@ table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "V
 
 STRATEGIES = {}
 
-STRATEGIES.update({"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in range(0, 100, 2)})
-STRATEGIES.update({"R" + str(i): lambda name, S, i=i: i for i in range(10, 770, 20)})
+STRATEGIES.update({"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in range(0, 100, 5)})
+STRATEGIES.update({"R" + str(i): lambda name, S, i=i: i for i in range(10, 770, 50)})
 
 saved_sv = None
 
