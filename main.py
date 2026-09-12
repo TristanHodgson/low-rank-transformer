@@ -218,7 +218,7 @@ plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.
 ###      Greedy      ###
 ########################
 strat_name, results, sv, p_count, final_ranks = run_greedy_strategy(
-    model, train_dataloader, test_dataloader, criterion, acc_floor=0.975, rank_step=[385, 10], top_k=10
+    model, train_dataloader, test_dataloader, criterion, acc_floor=0.98, rank_step=[385, 50], top_k=25
 )
 table_data.append([strat_name] + results + [p_count])
 
