@@ -62,15 +62,13 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
     return [*train_res, *val_res], singular_values, param_count
 
 
-def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_floor=0.95, rank_step=[385, 50], top_k=5):
-    # Convert rank_step to list if passed as single int
-    step_sizes = rank_step if isinstance(rank_step, (list, tuple)) else [rank_step]
-    
-    strat_name = f"Greedy{int(acc_floor * 100)}_{'_'.join(map(str, step_sizes))}_{top_k}"
+def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_floor=0.95, rank_step=50, top_k=5):
+    strat_name = f"Greedy{int(acc_floor * 100)}_{rank_step}_{top_k}"
     print(f"Running {strat_name} Strategy...")
 
+    # Unconditionally start all target layers at rank 384
     current_ranks = {
-        name: min(m.in_features, m.out_features)
+        name: 384
         for name, m in base_model.named_modules()
         if isinstance(m, nn.Linear) and not name.endswith("output")
     }
@@ -78,16 +76,14 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
     step = 0
     while True:
         step += 1
-        # Pick current step size (reuses last size if step exceeds list length)
-        curr_step = step_sizes[min(step - 1, len(step_sizes) - 1)]
         losses = {}
         
-        # 1. Test reducing rank by curr_step for each layer independently
+        # 1. Test reducing rank by rank_step for each layer independently
         for name in current_ranks:
-            if current_ranks[name] <= curr_step:
+            if current_ranks[name] <= rank_step:
                 continue
             
-            test_ranks = {**current_ranks, name: current_ranks[name] - curr_step}
+            test_ranks = {**current_ranks, name: current_ranks[name] - rank_step}
             results, _, _ = compress_and_evaluate(
                 base_model, lambda n, D, r=test_ranks: r[n], train_loader, test_loader, criterion, skip_val=True
             )
@@ -99,7 +95,7 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
         # 2. Pick top_k candidates with lowest training loss
         top_candidates = sorted(losses, key=losses.get)[:top_k]
         for name in top_candidates:
-            current_ranks[name] -= curr_step
+            current_ranks[name] -= rank_step
             
         # 3. Evaluate combined step
         results, _, p_count = compress_and_evaluate(
@@ -112,10 +108,10 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
         if train_char_acc <= acc_floor:
             print(f"Greedy Step {step} hit {train_char_acc:.4f} accuracy. Reverting to maintain >{acc_floor:.0%}.")
             for name in top_candidates:
-                current_ranks[name] += curr_step
+                current_ranks[name] += rank_step
             break
 
-        print(f"Greedy Step {step} (delta={curr_step}) - Train Char Acc: {train_char_acc:.4f}, Params: {p_count}")
+        print(f"Greedy Step {step} (delta={rank_step}) - Train Char Acc: {train_char_acc:.4f}, Params: {p_count}")
 
     # 5. Full evaluation on the final state & save model
     print(f"Evaluating final {strat_name} configuration...")
@@ -218,7 +214,7 @@ plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.
 ###      Greedy      ###
 ########################
 strat_name, results, sv, p_count, final_ranks = run_greedy_strategy(
-    model, train_dataloader, test_dataloader, criterion, acc_floor=0.98, rank_step=[385, 50], top_k=25
+    model, train_dataloader, test_dataloader, criterion, acc_floor=0.985, rank_step=50, top_k=15
 )
 table_data.append([strat_name] + results + [p_count])
 
