@@ -10,21 +10,26 @@ from modules.model import train, Model, evaluate
 
 
 def format_name(raw_name: str) -> str:
-    name = raw_name.replace("blocks.", "Block ")
-    name = name.replace(".attn.", " Attention ")
-    name = name.replace(".ffn.", " FFN ")
-    name = name.replace("q_proj", "Q Projection")
-    name = name.replace("k_proj", "K Projection")
-    name = name.replace("v_proj", "V Projection")
-    name = name.replace("out_proj", "Output Projection")
-    name = name.replace("linear1", "Layer 1")
-    name = name.replace("linear2", "Layer 2")
-    return name.title()
+    replacements = {
+        "blocks.": "Block ",
+        ".attn.": " Attention ",
+        ".ffn.": " FFN ",
+        "q_proj": "Q Projection",
+        "k_proj": "K Projection",
+        "v_proj": "V Projection",
+        "out_proj": "Output Projection",
+        "linear1": "Layer 1",
+        "linear2": "Layer 2"
+    }
+    for old, new in replacements.items():
+        raw_name = raw_name.replace(old, new)
+    return raw_name.title()
 
 
-def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion):
+def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion, skip_val=False):
     model = copy.deepcopy(base_model).to(device)
     singular_values = {}
+    
     for name, module in list(model.named_modules()):
         if isinstance(module, nn.Linear) and not name.endswith("output"):
             W = module.weight.data
@@ -37,60 +42,121 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
             if rank >= min(module.in_features, module.out_features):
                 continue
 
-            layer_B = nn.Linear(module.in_features, rank,
-                                bias=False).to(W.device)
-            layer_A = nn.Linear(rank, module.out_features, bias=(
-                module.bias is not None)).to(W.device)
+            layer_B = nn.Linear(module.in_features, rank, bias=False).to(W.device)
+            layer_A = nn.Linear(rank, module.out_features, bias=(module.bias is not None)).to(W.device)
 
-            layer_B.weight.data = torch.diag(
-                torch.sqrt(D[:rank])) @ V[:rank, :]
-            layer_A.weight.data = U[:,
-                                    :rank] @ torch.diag(torch.sqrt(D[:rank]))
+            layer_B.weight.data = torch.diag(torch.sqrt(D[:rank])) @ V[:rank, :]
+            layer_A.weight.data = U[:, :rank] @ torch.diag(torch.sqrt(D[:rank]))
             if module.bias is not None:
                 layer_A.bias.data = module.bias.data
 
             parent = model.get_submodule(name.rsplit(".", 1)[0])
-            setattr(parent, name.rsplit(".", 1)
-                    [-1], nn.Sequential(layer_B, layer_A))
+            setattr(parent, name.rsplit(".", 1)[-1], nn.Sequential(layer_B, layer_A))
 
     train_res = evaluate(model, train_loader, criterion)
-    val_res = evaluate(model, test_loader, criterion)
+    val_res = [0.0, 0.0, 0.0] if skip_val else evaluate(model, test_loader, criterion)
     param_count = sum(p.numel() for p in model.parameters())
     return [*train_res, *val_res], singular_values, param_count
 
 
+def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_floor=0.95, rank_step=1, top_k=5):
+    strat_name = f"Greedy{int(acc_floor * 100)}_{rank_step}_{top_k}"
+    print(f"Running {strat_name} Strategy...")
+
+    current_ranks = {
+        name: min(m.in_features, m.out_features)
+        for name, m in base_model.named_modules()
+        if isinstance(m, nn.Linear) and not name.endswith("output")
+    }
+
+    step = 0
+    while True:
+        step += 1
+        losses = {}
+        
+        # 1. Test reducing rank by rank_step for each layer independently
+        for name in current_ranks:
+            if current_ranks[name] <= rank_step:
+                continue
+            
+            test_ranks = {**current_ranks, name: current_ranks[name] - rank_step}
+            results, _, _ = compress_and_evaluate(
+                base_model, lambda n, D, r=test_ranks: r[n], train_loader, test_loader, criterion, skip_val=True
+            )
+            losses[name] = results[0]
+
+        if not losses:
+            break
+            
+        # 2. Pick top_k candidates with lowest training loss
+        top_candidates = sorted(losses, key=losses.get)[:top_k]
+        for name in top_candidates:
+            current_ranks[name] -= rank_step
+            
+        # 3. Evaluate combined step
+        results, _, p_count = compress_and_evaluate(
+            base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=True
+        )
+        
+        train_char_acc = results[1]
+        
+        # 4. Check accuracy threshold
+        if train_char_acc <= acc_floor:
+            print(f"Greedy Step {step} hit {train_char_acc:.4f} accuracy. Reverting to maintain >{acc_floor:.0%}.")
+            for name in top_candidates:
+                current_ranks[name] += rank_step
+            break
+
+        print(f"Greedy Step {step} - Train Char Acc: {train_char_acc:.4f}, Params: {p_count}")
+
+    # 5. Full evaluation on the final state
+    print(f"Evaluating final {strat_name} configuration...")
+    final_results, sv, final_p_count = compress_and_evaluate(
+        base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=False
+    )
+    return strat_name, final_results, sv, final_p_count
+
+
+def plot_metrics(x, y, z, w, xlabel, filename):
+    ax, fig = plt.subplots(2, 1, figsize=(6, 6))
+    fig[0].plot(x, y, color="blue", label="Sequence Accuracy")
+    fig[0].plot(x, z, color="orange", label="Character Accuracy")
+    fig[0].set_title(f"Validation Accuracy vs {xlabel}")
+    fig[0].set_xlabel(xlabel)
+    fig[0].set_ylabel("Accuracy")
+    fig[0].legend()
+
+    fig[1].plot(x, w, color="blue")
+    fig[1].set_title(f"Model Parameters Count vs {xlabel}")
+    fig[1].set_xlabel(xlabel)
+    fig[1].set_ylabel("Model Parameters Count")
+    fig[1].set_yscale("log")
+
+    plt.tight_layout()
+    plt.savefig(f"img/{filename}", dpi=600, bbox_inches="tight")
+    plt.close()
+
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+os.makedirs("img/scree_plots", exist_ok=True)
 
 train_data, test_data = get_data()
 train_dataloader = create_dataloader(train_data)
 test_dataloader = create_dataloader(test_data, shuffle=False)
 
-
 LOAD = False
 if LOAD:
-    model = Model(
-        vocab_size=32,
-        seq_len=32,
-        d_model=768,
-        n_heads=12,
-        d_ff=3072,
-        n_layers=12,
-    ).to(device)
-
-    model.load_state_dict(torch.load(
-        "model/full_rank.pth", map_location=device, weights_only=True))
+    model = Model(vocab_size=32, seq_len=32, d_model=768, n_heads=12, d_ff=3072, n_layers=12).to(device)
+    model.load_state_dict(torch.load("model/full_rank.pth", map_location=device, weights_only=True))
 else:
-    model = train(train_dataloader, test_dataloader, EPOCHS=10,LR=1e-4, save_path="full_rank.pth")
-print("Model Loaded")
+    model = train(train_dataloader, test_dataloader, EPOCHS=10, LR=1e-4, save_path="full_rank.pth")
 
-print("\n"*3)
+print("Model Loaded\n\n\n")
+
 criterion = nn.CrossEntropyLoss()
-train_loss, train_char_acc, train_seq_acc = evaluate(
-    model, train_dataloader, criterion)
-val_loss, val_char_acc, val_seq_acc = evaluate(
-    model, test_dataloader, criterion)
+train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
+val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
 param_count = sum(p.numel() for p in model.parameters())
-
 
 table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc, param_count]]
 table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters Count"]
@@ -99,85 +165,57 @@ table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "V
 ########################
 ###       Rank       ###
 ########################
+print("Running Rank Strategy...")
+x_rank = list(range(10, 770, 10))
+y_rank, z_rank, w_rank = [], [], []
 
-x = [i for i in range(10, 770, 10)]
-y, z, w = [], [], []
+for i in x_rank:
+    strat_name = f"R{i}"
+    results, sv, p_count = compress_and_evaluate(model, lambda name, S, rank=i: rank, train_dataloader, test_dataloader, criterion)
+    y_rank.append(results[-1])
+    z_rank.append(results[-2])
+    w_rank.append(p_count)
+    table_data.append([strat_name] + results + [p_count])
 
-STRATEGIES = {"R" + str(i): lambda name, S, i=i: i for i in x}
-
-
-for strat_name, rank_fn in STRATEGIES.items():
-    print(f"{strat_name}")
-    results, sv, param_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
-    y.append(results[-1])
-    z.append(results[-2])
-    w.append(param_count)
-    table_data.append([strat_name] + results + [param_count])
-
-ax, fig = plt.subplots(2, 1, figsize=(6, 6))
-fig[0].plot(x, y, color="blue", label="Sequence Accuracy")
-fig[0].plot(x, z, color="orange", label="Character Accuracy")
-fig[0].set_title("Validation Accuracy vs Rank")
-fig[0].set_xlabel("Rank")
-fig[0].set_ylabel("Accuracy")
-fig[0].legend()
-
-fig[1].plot(x, w, color="blue")
-fig[1].set_title("Model Parameters Count vs Rank")
-fig[1].set_xlabel("Rank")
-fig[1].set_ylabel("Model Parameters Count")
-fig[1].set_yscale("log")
-
-plt.tight_layout()
-plt.savefig("img/rank_vs_loss.png", dpi=600, bbox_inches="tight")
-plt.close()
-
+plot_metrics(x_rank, y_rank, z_rank, w_rank, "Rank", "rank_vs_loss.png")
 
 
 ########################
 ###      Energy      ###
 ########################
+print("Running Energy Strategy...")
+x_eng = list(range(0, 100, 2))
+y_eng, z_eng, w_eng = [], [], []
 
-x = [i for i in range(0, 100, 2)]
-y, z, w = [], [], []
+for i in x_eng:
+    strat_name = f"Energy{i}"
+    rank_fn = lambda name, S, thresh=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= thresh / 100).nonzero(as_tuple=True)[0][0].item() + 1
+    
+    results, sv, p_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
+    y_eng.append(results[-1])
+    z_eng.append(results[-2])
+    w_eng.append(p_count)
+    table_data.append([strat_name] + results + [p_count])
+
+plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.png")
 
 
-STRATEGIES = {"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(
-    S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in x}
+########################
+###      Greedy      ###
+########################
+strat_name, results, sv, p_count = run_greedy_strategy(
+    model, train_dataloader, test_dataloader, criterion, acc_floor=0.95, rank_step=10, top_k=5
+)
+table_data.append([strat_name] + results + [p_count])
 
-for strat_name, rank_fn in STRATEGIES.items():
-    print(f"{strat_name}")
-    results, sv, param_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
-    y.append(results[-1])
-    z.append(results[-2])
-    w.append(param_count)
-    table_data.append([strat_name] + results + [param_count])
-
-ax, fig = plt.subplots(2, 1, figsize=(6, 6))
-fig[0].plot(x, y, color="blue", label="Sequence Accuracy")
-fig[0].plot(x, z, color="orange", label="Character Accuracy")
-fig[0].set_title("Validation Accuracy vs Energy Retained (%)")
-fig[0].set_xlabel("Energy Retained (%)")
-fig[0].set_ylabel("Accuracy")
-fig[0].legend()
-
-fig[1].plot(x, w, color="blue")
-fig[1].set_title("Model Parameters Count vs Energy Retained (%)")
-fig[1].set_xlabel("Energy Retained (%)")
-fig[1].set_ylabel("Model Parameters Count")
-fig[1].set_yscale("log")
-
-plt.tight_layout()
-plt.savefig("img/rank_vs_loss.png", dpi=600, bbox_inches="tight")
-plt.close()
 
 ########################
 ###      Results     ###
 ########################
 
+print("\n")
 print(tabulate(table_data, headers=table_headers, tablefmt="github"))
 
-os.makedirs("img/scree_plots", exist_ok=True)
 for name, S in sv.items():
     readable_name = format_name(name)
     plt.figure(figsize=(6, 3))
@@ -187,6 +225,5 @@ for name, S in sv.items():
     plt.ylabel("Singular Value (Log Scale)")
     plt.xlabel("Index")
     plt.tight_layout()
-    plt.savefig(f"img/scree_plots/{readable_name}.png",
-                dpi=600, bbox_inches="tight")
+    plt.savefig(f"img/scree_plots/{readable_name}.png", dpi=600, bbox_inches="tight")
     plt.close()

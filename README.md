@@ -31,6 +31,9 @@ R2_BUCKET=
 | ------------- | -------------------------------------------------------------------------------------------- |
 | R100          | All matrices compressed to rank 100, except for the final output layer                       |
 | Energy95      | All matrices are compressed so that they have the top 95% of their singular values by weight |
+| Greedy 95 |
+
+Note we never compress the final output layer.
 
 ## Results
 
