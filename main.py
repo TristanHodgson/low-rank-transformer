@@ -122,7 +122,7 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
     torch.save(final_model.state_dict(), save_path)
     print(f"Saved compressed model to {save_path}")
 
-    return strat_name, final_results, sv, final_p_count
+    return strat_name, final_results, sv, final_p_count, current_ranks
 
 
 def plot_metrics(x, y, z, w, xlabel, filename):
@@ -212,7 +212,7 @@ plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.
 ########################
 ###      Greedy      ###
 ########################
-strat_name, results, sv, p_count = run_greedy_strategy(
+strat_name, results, sv, p_count, final_ranks = run_greedy_strategy(
     model, train_dataloader, test_dataloader, criterion, acc_floor=0.95, rank_step=20, top_k=10
 )
 table_data.append([strat_name] + results + [p_count])
@@ -225,10 +225,30 @@ table_data.append([strat_name] + results + [p_count])
 print("\n")
 print(tabulate(table_data, headers=table_headers, tablefmt="github"))
 
+print("\n")
+rank_table_data = []
+for name, S in sv.items():
+    rank = final_ranks[name]
+    retained_frac = (torch.sum(S[:rank]) / torch.sum(S)).item()
+    rank_table_data.append([format_name(name), rank, f"{retained_frac:.4f}"])
+
+print(tabulate(rank_table_data, headers=["Layer", "Greedy Final Rank", "Retained SV Weight"], tablefmt="github"))
+
 for name, S in sv.items():
     readable_name = format_name(name)
+    rank = final_ranks[name]
+    
+    # -1 to align with 0-indexed plots. Ensure we don't index negative bounds
+    idx = max(0, rank - 1)
+    val = S[idx].item()
+    
     plt.figure(figsize=(6, 3))
     plt.plot(S.cpu().numpy(), color="blue")
+    
+    # Dotted red intersection lines
+    plt.axvline(x=idx, color="red", linestyle="dotted")
+    plt.axhline(y=val, color="red", linestyle="dotted")
+    
     plt.title(f"Scree Plot: {readable_name}")
     plt.yscale("log")
     plt.ylabel("Singular Value (Log Scale)")
