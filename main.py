@@ -26,7 +26,7 @@ def format_name(raw_name: str) -> str:
     return raw_name.title()
 
 
-def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion, skip_val=False):
+def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criterion, skip_val=False, return_model=False):
     model = copy.deepcopy(base_model).to(device)
     singular_values = {}
     
@@ -56,6 +56,9 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
     train_res = evaluate(model, train_loader, criterion)
     val_res = [0.0, 0.0, 0.0] if skip_val else evaluate(model, test_loader, criterion)
     param_count = sum(p.numel() for p in model.parameters())
+    
+    if return_model:
+        return [*train_res, *val_res], singular_values, param_count, model
     return [*train_res, *val_res], singular_values, param_count
 
 
@@ -109,11 +112,16 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
 
         print(f"Greedy Step {step} - Train Char Acc: {train_char_acc:.4f}, Params: {p_count}")
 
-    # 5. Full evaluation on the final state
+    # 5. Full evaluation on the final state & save model
     print(f"Evaluating final {strat_name} configuration...")
-    final_results, sv, final_p_count = compress_and_evaluate(
-        base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=False
+    final_results, sv, final_p_count, final_model = compress_and_evaluate(
+        base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=False, return_model=True
     )
+    
+    save_path = f"model/{strat_name}.pth"
+    torch.save(final_model.state_dict(), save_path)
+    print(f"Saved compressed model to {save_path}")
+
     return strat_name, final_results, sv, final_p_count
 
 
@@ -138,6 +146,7 @@ def plot_metrics(x, y, z, w, xlabel, filename):
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+os.makedirs("model", exist_ok=True)
 os.makedirs("img/scree_plots", exist_ok=True)
 
 train_data, test_data = get_data()
@@ -204,7 +213,7 @@ plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.
 ###      Greedy      ###
 ########################
 strat_name, results, sv, p_count = run_greedy_strategy(
-    model, train_dataloader, test_dataloader, criterion, acc_floor=0.95, rank_step=10, top_k=5
+    model, train_dataloader, test_dataloader, criterion, acc_floor=0.95, rank_step=1, top_k=5
 )
 table_data.append([strat_name] + results + [p_count])
 
