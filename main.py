@@ -86,17 +86,17 @@ param_count = sum(p.numel() for p in model.parameters())
 
 
 table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc, param_count]]
-table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters  Count"]
+table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters Count"]
 
 STRATEGIES = {}
 
-STRATEGIES.update({"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in range(0, 100, 1)})
-STRATEGIES.update({"R" + str(i): lambda name, S, i=i: i for i in range(10, 770, 10)})
+STRATEGIES.update({"Energy" + str(i): lambda name, S, i=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= i / 100).nonzero(as_tuple=True)[0][0].item() + 1 for i in range(0, 100, 2)})
+STRATEGIES.update({"R" + str(i): lambda name, S, i=i: i for i in range(10, 770, 20)})
 
 saved_sv = None
 
 for strat_name, rank_fn in STRATEGIES.items():
-    print(f"\n\n\n\n ### {strat_name}")
+    print(f"{strat_name}")
     results, sv, param_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
     table_data.append([strat_name] + results + [param_count])
     if saved_sv is None:

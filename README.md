@@ -66,7 +66,7 @@ R2_BUCKET=
 
 ## Model
 
-A Pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings.
+Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings.
 
 | Parameter  | Value |
 | ---------- | ----- |
