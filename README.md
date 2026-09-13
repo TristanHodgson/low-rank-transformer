@@ -37,6 +37,9 @@ Note we never compress the final output layer.
 
 ## Results
 
+![](img/rank_vs_loss.png)
+
+![](img/energy_vs_loss.png)
 
 | Strategy       |   Train Loss |   Train Char Acc |   Train Seq Acc |   Val Loss |   Val Char Acc |   Val Seq Acc |   Model Parameters Count |
 |----------------|--------------|------------------|-----------------|------------|----------------|---------------|--------------------------|
@@ -168,6 +171,8 @@ Note we never compress the final output layer.
 | Energy96       |   0.00166449 |         0.999614 |     0.996892    |  0.0329999 |       0.991639 |   0.974421    |                110926880 |
 | Energy98       |   0.00160643 |         0.999622 |     0.996986    |  0.0332218 |       0.991637 |   0.974546    |                116771360 |
 | Greedy98_50_15 |   0.0791344  |         0.986572 |     0.863606    |  0.0997709 |       0.979314 |   0.851165    |                 25419296 |
+
+You can find skee plots for each matrix [here](img/scree_plots)
 
 
 ### Greedy98_50_15 Compressed Matrices
