@@ -13,6 +13,8 @@ pod = runpod.create_pod(
     image_name="runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04",
     # gpu_type_id="NVIDIA RTX A5000",
     gpu_type_id="NVIDIA GeForce RTX 3090",
+    # gpu_type_id="NVIDIA GeForce RTX 4090",
+
     # gpu_type_id="NVIDIA RTX A4000",
     cloud_type="COMMUNITY",
     # cloud_type="SECURE",
