@@ -191,14 +191,14 @@ plot_metrics(x_rank, y_rank, z_rank, w_rank, "Rank", "rank_vs_loss.png")
 
 
 ########################
-###      Energy      ###
+###      Weight      ###
 ########################
-print("Running Energy Strategy...")
+print("Running Weight Strategy...")
 x_eng = list(range(0, 100, 2))
 y_eng, z_eng, w_eng = [], [], []
 
 for i in x_eng:
-    strat_name = f"Energy{i}"
+    strat_name = f"Weight{i}"
     rank_fn = lambda name, S, thresh=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= thresh / 100).nonzero(as_tuple=True)[0][0].item() + 1
     
     results, sv, p_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
@@ -207,7 +207,7 @@ for i in x_eng:
     w_eng.append(p_count)
     table_data.append([strat_name] + results + [p_count])
 
-plot_metrics(x_eng, y_eng, z_eng, w_eng, "Energy Retained (%)", "energy_vs_loss.png")
+plot_metrics(x_eng, y_eng, z_eng, w_eng, "Weight Retained (%)", "Weight_vs_loss.png")
 
 
 ########################
