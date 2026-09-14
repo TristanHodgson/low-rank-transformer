@@ -28,7 +28,7 @@ R2_BUCKET=
 
 ## Results
 
-You can find scree plots for each matrix [here](img/scree_plots/index.html) and our full results tables [here](output.txt)
+You can find scree plots for each matrix [here](img/scree_plots/scree.png) and our full results tables [here](output.txt)
 
 We compare three different compression strategies:
 
