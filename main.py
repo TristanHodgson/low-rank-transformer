@@ -162,7 +162,7 @@ train_data, test_data = get_data()
 train_dataloader = create_dataloader(train_data)
 test_dataloader = create_dataloader(test_data, shuffle=False)
 
-LOAD = True
+LOAD = False
 if LOAD:
     model = Model(vocab_size=32, seq_len=32, d_model=768, n_heads=12, d_ff=3072, n_layers=12).to(device)
     model.load_state_dict(torch.load("model/full_rank.pth", map_location=device, weights_only=True))
