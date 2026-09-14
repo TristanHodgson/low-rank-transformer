@@ -3,6 +3,8 @@ import copy
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
 from tabulate import tabulate
 
 from modules.data import create_dataloader, get_data
@@ -129,7 +131,7 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
 def plot_metrics(x, y, z, w, xlabel, filename):
     ax, fig = plt.subplots(2, 1, figsize=(6, 6))
     fig[0].plot(x, y, color="blue", label="Sequence Accuracy")
-    fig[0].plot(x, z, color="orange", label="Character Accuracy")
+    fig[0].plot(x, z, color="red", label="Character Accuracy")
     fig[0].set_title(f"Validation Accuracy vs {xlabel}")
     fig[0].set_xlabel(xlabel)
     fig[0].set_ylabel("Accuracy")
@@ -180,12 +182,12 @@ x_rank = list(range(10, 770, 10))
 y_rank, z_rank, w_rank = [], [], []
 
 for i in x_rank:
-    strat_name = f"R{i}"
-    results, sv, p_count = compress_and_evaluate(model, lambda name, S, rank=i: rank, train_dataloader, test_dataloader, criterion)
+    strat_name_rank = f"R{i}"
+    results, sv_rank, p_count = compress_and_evaluate(model, lambda name, S, rank=i: rank, train_dataloader, test_dataloader, criterion)
     y_rank.append(results[-1])
     z_rank.append(results[-2])
     w_rank.append(p_count)
-    table_data.append([strat_name] + results + [p_count])
+    table_data.append([strat_name_rank] + results + [p_count])
 
 plot_metrics(x_rank, y_rank, z_rank, w_rank, "Rank", "rank_vs_loss.png")
 
@@ -198,14 +200,14 @@ x_eng = list(range(0, 100, 2))
 y_eng, z_eng, w_eng = [], [], []
 
 for i in x_eng:
-    strat_name = f"Weight{i}"
+    strat_name_weight = f"Weight{i}"
     rank_fn = lambda name, S, thresh=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= thresh / 100).nonzero(as_tuple=True)[0][0].item() + 1
     
-    results, sv, p_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
+    results, sv_eng, p_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
     y_eng.append(results[-1])
     z_eng.append(results[-2])
     w_eng.append(p_count)
-    table_data.append([strat_name] + results + [p_count])
+    table_data.append([strat_name_weight] + results + [p_count])
 
 plot_metrics(x_eng, y_eng, z_eng, w_eng, "Weight Retained (%)", "Weight_vs_loss.png")
 
@@ -235,6 +237,58 @@ for name, S in sv.items():
 
 print(tabulate(rank_table_data, headers=["Layer", "Greedy Final Rank", "Retained SV Weight"], tablefmt="github"))
 
+########################
+###   Heatmap Plot   ###
+########################
+df = pd.DataFrame(rank_table_data, columns=["Layer", "Rank", "Weight"])
+df["Weight"] = df["Weight"].astype(float)
+
+comp_map = {
+    "Sa.Q Projection": "Q projection",
+    "Sa.K Projection": "K projection",
+    "Sa.V Projection": "V projection",
+    "Sa.Output Projection": "self attention output",
+    "Ffwd.Net.0": "ffwd 0",
+    "Ffwd.Net.2": "ffwd 2"
+}
+
+df["Block"] = df["Layer"].apply(lambda x: x.split(".")[0])
+df["ComponentRaw"] = df["Layer"].apply(lambda x: ".".join(x.split(".")[1:]))
+df["Component"] = df["ComponentRaw"].map(comp_map)
+
+cols_order = ["Q projection", "K projection", "V projection", "self attention output", "ffwd 0", "ffwd 2"]
+blocks_order = [f"Block {i}" for i in range(12)]
+
+rank_pivot = df.pivot(index="Block", columns="Component", values="Rank").reindex(index=blocks_order, columns=cols_order)
+weight_pivot = df.pivot(index="Block", columns="Component", values="Weight").reindex(index=blocks_order, columns=cols_order)
+
+fig, ax = plt.subplots(figsize=(10, 8))
+cax = ax.imshow(weight_pivot.values, cmap="viridis", aspect="auto")
+
+ax.set_xticks(np.arange(len(cols_order)))
+ax.set_yticks(np.arange(len(blocks_order)))
+ax.set_xticklabels(cols_order, rotation=45, ha="right")
+ax.set_yticklabels(blocks_order)
+
+for i in range(len(blocks_order)):
+    for j in range(len(cols_order)):
+        text_color = "white" if weight_pivot.values[i, j] < 0.5 else "black"
+        ax.text(j, i, int(rank_pivot.values[i, j]),
+                ha="center", va="center", color=text_color)
+
+cbar = fig.colorbar(cax, ax=ax)
+cbar.set_label("Retained SV Weight")
+
+ax.set_title(f"Matrix Rank and Retained Singular Values Weight for {strat_name}", pad=20, fontsize=14)
+ax.spines[:].set_visible(False)
+
+fig.tight_layout()
+plt.savefig("img/heatmap.png", dpi=600, bbox_inches="tight")
+plt.close()
+
+########################
+###   Scree Plots    ###
+########################
 for name, S in sv.items():
     readable_name = format_name(name)
     rank = final_ranks[name]
