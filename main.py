@@ -1,5 +1,6 @@
 import os
 import copy
+import random
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -8,7 +9,15 @@ import numpy as np
 from tabulate import tabulate
 
 from modules.data import create_dataloader, get_data
-from modules.model import train, Model, evaluate
+from modules.model import train, train_epoch, Model, evaluate
+
+
+def set_seed(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 
 def format_name(raw_name: str) -> str:
@@ -33,7 +42,7 @@ def compress_and_evaluate(base_model, rank_fn, train_loader, test_loader, criter
     singular_values = {}
     
     for name, module in list(model.named_modules()):
-        if isinstance(module, nn.Linear) and not name.endswith("output"):
+        if isinstance(module, nn.Linear) and not name.endswith("output") and not name.endswith("head"):
             W = module.weight.data
 
             U, D, V = torch.linalg.svd(W, full_matrices=False)
@@ -68,7 +77,6 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
     strat_name = f"Greedy{int(acc_floor * 100)}_{rank_step}_{top_k}"
     print(f"Running {strat_name} Strategy...")
 
-    # Unconditionally start all target layers at rank 384
     current_ranks = {
         name: 384
         for name, m in base_model.named_modules()
@@ -80,7 +88,6 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
         step += 1
         losses = {}
         
-        # 1. Test reducing rank by rank_step for each layer independently
         for name in current_ranks:
             if current_ranks[name] <= rank_step:
                 continue
@@ -94,19 +101,16 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
         if not losses:
             break
             
-        # 2. Pick top_k candidates with lowest training loss
         top_candidates = sorted(losses, key=losses.get)[:top_k]
         for name in top_candidates:
             current_ranks[name] -= rank_step
             
-        # 3. Evaluate combined step
         results, _, p_count = compress_and_evaluate(
             base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=True
         )
         
         train_char_acc = results[1]
         
-        # 4. Check accuracy threshold
         if train_char_acc <= acc_floor:
             print(f"Greedy Step {step} hit {train_char_acc:.4f} accuracy. Reverting to maintain >{acc_floor:.0%}.")
             for name in top_candidates:
@@ -115,7 +119,6 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
 
         print(f"Greedy Step {step} (delta={rank_step}) - Train Char Acc: {train_char_acc:.4f}, Params: {p_count}")
 
-    # 5. Full evaluation on the final state & save model
     print(f"Evaluating final {strat_name} configuration...")
     final_results, sv, final_p_count, final_model = compress_and_evaluate(
         base_model, lambda n, D, r=current_ranks: r[n], train_loader, test_loader, criterion, skip_val=False, return_model=True
@@ -125,7 +128,7 @@ def run_greedy_strategy(base_model, train_loader, test_loader, criterion, acc_fl
     torch.save(final_model.state_dict(), save_path)
     print(f"Saved compressed model to {save_path}")
 
-    return strat_name, final_results, sv, final_p_count, current_ranks
+    return strat_name, final_results, sv, final_p_count, current_ranks, final_model
 
 
 def plot_metrics(x, y, z, w, xlabel, filename):
@@ -148,15 +151,18 @@ def plot_metrics(x, y, z, w, xlabel, filename):
     plt.close()
 
 
+set_seed(42)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 os.makedirs("model", exist_ok=True)
+os.makedirs("model/finetuning", exist_ok=True)
 os.makedirs("img/scree_plots", exist_ok=True)
+os.makedirs("output", exist_ok=True)
 
 train_data, test_data = get_data()
 train_dataloader = create_dataloader(train_data)
 test_dataloader = create_dataloader(test_data, shuffle=False)
 
-LOAD = False
+LOAD = True
 if LOAD:
     model = Model(vocab_size=32, seq_len=32, d_model=768, n_heads=12, d_ff=3072, n_layers=12).to(device)
     model.load_state_dict(torch.load("model/full_rank.pth", map_location=device, weights_only=True))
@@ -169,6 +175,8 @@ criterion = nn.CrossEntropyLoss()
 train_loss, train_char_acc, train_seq_acc = evaluate(model, train_dataloader, criterion)
 val_loss, val_char_acc, val_seq_acc = evaluate(model, test_dataloader, criterion)
 param_count = sum(p.numel() for p in model.parameters())
+
+original_model = copy.deepcopy(model).to(device)
 
 table_data = [["Full", train_loss, train_char_acc, train_seq_acc, val_loss, val_char_acc, val_seq_acc, param_count]]
 table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters Count"]
@@ -183,7 +191,7 @@ y_rank, z_rank, w_rank = [], [], []
 
 for i in x_rank:
     strat_name_rank = f"R{i}"
-    results, sv_rank, p_count = compress_and_evaluate(model, lambda name, S, rank=i: rank, train_dataloader, test_dataloader, criterion)
+    results, sv_rank, p_count = compress_and_evaluate(original_model, lambda name, S, rank=i: rank, train_dataloader, test_dataloader, criterion)
     y_rank.append(results[-1])
     z_rank.append(results[-2])
     w_rank.append(p_count)
@@ -196,33 +204,33 @@ plot_metrics(x_rank, y_rank, z_rank, w_rank, "Rank", "rank_vs_loss.png")
 ###      Weight      ###
 ########################
 print("Running Weight Strategy...")
-x_eng = list(range(0, 100, 2))
-y_eng, z_eng, w_eng = [], [], []
+x_weight = list(range(0, 100, 2))
+y_weight, z_weight, w_weight = [], [], []
 
-for i in x_eng:
+for i in x_weight:
     strat_name_weight = f"Weight{i}"
     rank_fn = lambda name, S, thresh=i: (torch.cumsum(S, dim=0) / torch.sum(S) >= thresh / 100).nonzero(as_tuple=True)[0][0].item() + 1
     
-    results, sv_eng, p_count = compress_and_evaluate(model, rank_fn, train_dataloader, test_dataloader, criterion)
-    y_eng.append(results[-1])
-    z_eng.append(results[-2])
-    w_eng.append(p_count)
+    results, sv_weight, p_count = compress_and_evaluate(original_model, rank_fn, train_dataloader, test_dataloader, criterion)
+    y_weight.append(results[-1])
+    z_weight.append(results[-2])
+    w_weight.append(p_count)
     table_data.append([strat_name_weight] + results + [p_count])
 
-plot_metrics(x_eng, y_eng, z_eng, w_eng, "Weight Retained (%)", "Weight_vs_loss.png")
+plot_metrics(x_weight, y_weight, z_weight, w_weight, "Weight Retained (%)", "Weight_vs_loss.png")
 
 
 ########################
 ###      Greedy      ###
 ########################
-strat_name, results, sv, p_count, final_ranks = run_greedy_strategy(
-    model, train_dataloader, test_dataloader, criterion, acc_floor=0.985, rank_step=50, top_k=15
+strat_name, results, sv, p_count, final_ranks, greedy_model = run_greedy_strategy(
+    original_model, train_dataloader, test_dataloader, criterion, acc_floor=0.985, rank_step=50, top_k=15
 )
 table_data.append([strat_name] + results + [p_count])
 
 
 ########################
-###      Results     ###
+###  Sweep Results   ###
 ########################
 
 print("\n")
@@ -240,27 +248,27 @@ print(tabulate(rank_table_data, headers=["Layer", "Greedy Final Rank", "Retained
 ########################
 ###   Heatmap Plot   ###
 ########################
-df = pd.DataFrame(rank_table_data, columns=["Layer", "Rank", "Weight"])
-df["Weight"] = df["Weight"].astype(float)
+df = pd.DataFrame(rank_table_data, columns=['Layer', 'Rank', 'Weight'])
+df['Weight'] = df['Weight'].astype(float)
 
 comp_map = {
-    "Sa.Q Projection": "Q projection",
-    "Sa.K Projection": "K projection",
-    "Sa.V Projection": "V projection",
-    "Sa.Output Projection": "self attention output",
-    "Ffwd.Net.0": "ffwd 0",
-    "Ffwd.Net.2": "ffwd 2"
+    'Sa.Q Projection': 'Q projection',
+    'Sa.K Projection': 'K projection',
+    'Sa.V Projection': 'V projection',
+    'Sa.Output Projection': 'self attention output',
+    'Ffwd.Net.0': 'ffwd 0',
+    'Ffwd.Net.2': 'ffwd 2'
 }
 
-df["Block"] = df["Layer"].apply(lambda x: x.split(".")[0])
-df["ComponentRaw"] = df["Layer"].apply(lambda x: ".".join(x.split(".")[1:]))
-df["Component"] = df["ComponentRaw"].map(comp_map)
+df['Block'] = df['Layer'].apply(lambda x: x.split('.')[0])
+df['ComponentRaw'] = df['Layer'].apply(lambda x: '.'.join(x.split('.')[1:]))
+df['Component'] = df['ComponentRaw'].map(comp_map)
 
-cols_order = ["Q projection", "K projection", "V projection", "self attention output", "ffwd 0", "ffwd 2"]
+cols_order = ['Q projection', 'K projection', 'V projection', 'self attention output', 'ffwd 0', 'ffwd 2']
 blocks_order = [f"Block {i}" for i in range(12)]
 
-rank_pivot = df.pivot(index="Block", columns="Component", values="Rank").reindex(index=blocks_order, columns=cols_order)
-weight_pivot = df.pivot(index="Block", columns="Component", values="Weight").reindex(index=blocks_order, columns=cols_order)
+rank_pivot = df.pivot(index='Block', columns='Component', values='Rank').reindex(index=blocks_order, columns=cols_order)
+weight_pivot = df.pivot(index='Block', columns='Component', values='Weight').reindex(index=blocks_order, columns=cols_order)
 
 fig, ax = plt.subplots(figsize=(10, 8))
 cax = ax.imshow(weight_pivot.values, cmap="viridis", aspect="auto")
@@ -277,13 +285,13 @@ for i in range(len(blocks_order)):
                 ha="center", va="center", color=text_color)
 
 cbar = fig.colorbar(cax, ax=ax)
-cbar.set_label("Retained SV Weight")
+cbar.set_label('Retained SV Weight')
 
 ax.set_title(f"Matrix Rank and Retained Singular Values Weight for {strat_name}", pad=20, fontsize=14)
 ax.spines[:].set_visible(False)
 
 fig.tight_layout()
-plt.savefig("img/heatmap.png", dpi=600, bbox_inches="tight")
+plt.savefig("img/heatmap.png", dpi=600, bbox_inches='tight')
 plt.close()
 
 ########################
@@ -293,14 +301,12 @@ for name, S in sv.items():
     readable_name = format_name(name)
     rank = final_ranks[name]
     
-    # -1 to align with 0-indexed plots. Ensure we don't index negative bounds
     idx = max(0, rank - 1)
     val = S[idx].item()
     
     plt.figure(figsize=(6, 3))
     plt.plot(S.cpu().numpy(), color="blue")
     
-    # Dotted red intersection lines
     plt.axvline(x=idx, color="red", linestyle="dotted")
     plt.axhline(y=val, color="red", linestyle="dotted")
     
@@ -311,3 +317,75 @@ for name, S in sv.items():
     plt.tight_layout()
     plt.savefig(f"img/scree_plots/{readable_name}.png", dpi=600, bbox_inches="tight")
     plt.close()
+
+
+########################################
+###   Fine-Tuning Experiment Setup   ###
+########################################
+
+strategies = ["Full", "Greedy", "R10", "R150", "R180", "Weight2", "Weight32", "Weight38"]
+ft_table_headers = ["Strategy", "Train Loss", "Train Char Acc", "Train Seq Acc", "Val Loss", "Val Char Acc", "Val Seq Acc", "Model Parameters Count"]
+results_data = []
+
+csv_path = "output/finetuning_results.csv"
+md_path = "output/finetuning_results.md"
+
+print(f"\nStarting Fine-Tuning Experiment for {len(strategies)} Strategies...\n")
+
+for strat in strategies:
+    print(f"--- Setting up Strategy: {strat} ---")
+    
+    if strat == "Full":
+        m = copy.deepcopy(original_model)
+    elif strat == "Greedy":
+        m = copy.deepcopy(greedy_model)
+    elif strat.startswith("R"):
+        rank_val = int(strat[1:])
+        _, _, _, m = compress_and_evaluate(
+            original_model, lambda name, S, rank=rank_val: rank, 
+            train_dataloader, test_dataloader, criterion, skip_val=True, return_model=True
+        )
+    elif strat.startswith("Weight"):
+        thresh_val = int(strat[6:])
+        rank_fn = lambda name, S, thresh=thresh_val: (torch.cumsum(S, dim=0) / torch.sum(S) >= thresh / 100).nonzero(as_tuple=True)[0][0].item() + 1
+        _, _, _, m = compress_and_evaluate(
+            original_model, rank_fn,
+            train_dataloader, test_dataloader, criterion, skip_val=True, return_model=True
+        )
+    
+    m = m.to(device)
+    optimizer = torch.optim.AdamW(m.parameters(), lr=1e-4)
+    base_param_count = sum(p.numel() for p in m.parameters())
+    
+    for epoch in range(4):
+        strat_epoch_name = f"{strat}_E{epoch}"
+        print(f"  -> Processing {strat_epoch_name}...")
+        
+        if epoch > 0:
+            train_epoch(m, train_dataloader, optimizer, criterion)
+            
+        current_param_count = sum(p.numel() for p in m.parameters())
+        assert current_param_count == base_param_count, f"Architecture changed unexpectedly during {strat_epoch_name}!"
+        
+        train_res = evaluate(m, train_dataloader, criterion)
+        val_res = evaluate(m, test_dataloader, criterion)
+        
+        checkpoint_path = f"model/finetuning/{strat_epoch_name}.pth"
+        torch.save(m.state_dict(), checkpoint_path)
+        
+        row = [strat_epoch_name, train_res[0], train_res[1], train_res[2], val_res[0], val_res[1], val_res[2], current_param_count]
+        results_data.append(row)
+        
+        df_ft = pd.DataFrame(results_data, columns=ft_table_headers)
+        df_ft.to_csv(csv_path, index=False)
+        with open(md_path, "w") as f:
+            f.write(tabulate(results_data, headers=ft_table_headers, tablefmt="github"))
+            
+    print(f"Completed {strat}.\n")
+    
+    del m
+    del optimizer
+    torch.cuda.empty_cache()
+
+print("Fine-Tuning Experiment Completed Successfully.\n")
+print(tabulate(results_data, headers=ft_table_headers, tablefmt="github"))
