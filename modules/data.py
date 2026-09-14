@@ -8,7 +8,7 @@ from modules import ceaser
 
 
 BLOCK_LENGTH = 32
-BATCH_SIZE = 256
+BATCH_SIZE = 1024
 
 
 def clean_text(sentence):

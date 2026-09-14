@@ -14,7 +14,6 @@ pod = runpod.create_pod(
     # gpu_type_id="NVIDIA RTX A5000",
     gpu_type_id="NVIDIA GeForce RTX 3090",
     # gpu_type_id="NVIDIA GeForce RTX 4090",
-
     # gpu_type_id="NVIDIA RTX A4000",
     cloud_type="COMMUNITY",
     # cloud_type="SECURE",
