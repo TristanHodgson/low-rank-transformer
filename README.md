@@ -61,6 +61,13 @@ Note we never compress the final output layer.
 
 **Observation:** The heatmap visualizes the final retained rank distribution across the network layers after iterative pruning. It reveals that the greedy strategy aggressively compresses specific layers—often early feed-forward networks or specific attention heads—that contribute less to the final objective, while preserving the rank of highly sensitive bottleneck layers.
 
+### Fine-Tuning Experiment
+
+![](img/low_rank_finetuning.png)
+![](img/model_param_finetuning.png)
+
+**Observation:** To recover the accuracy lost during the initial SVD compression, we introduced a subsequent fine-tuning phase. By allowing the compressed models to continue training for a limited number of epochs, the low-rank matrices adapt and compensate for the truncated singular values. The experiments demonstrate that fine-tuning significantly restores decryption accuracy across the tested configurations. This approach allows even aggressively compressed variants (like our Greedy strategy) to bridge the performance gap, ultimately yielding a highly efficient model with a minimal parameter footprint and preserved decryption capabilities.
+
 ## Model
 
 Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings. The architecture relies on streamlined, modular functions for the scaled dot-product attention and transformer blocks.
@@ -83,7 +90,7 @@ Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and
 - We convert all characters to lower case and remove all characters that are not alphabetic characters or a space
 - We extract 32 characters from the start of each sentence (removing those not long enough)
 - We encrypt each sentence using one random key shift
-- We then train and test on approximately 32,000 $(\text{Encrypted text}, \text{Decrypted text})$ pairs
+- We then train and test on approximately 32,000 (Encrypted text, Decrypted text) pairs
 
 ## Citations
 
