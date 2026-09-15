@@ -33,40 +33,42 @@ To evaluate throughput and performance increases, saved model checkpoints (such 
 
 You can find logarithmic scale scree plots generated using matplotlib for each matrix [here](img/scree.png) and our full results tables [here](output.txt).
 
-We compare three different compression strategies:
+We compare three primary categories of compression strategies against our uncompressed baseline (~85.1M parameters). We evaluate both extreme compression (to test the limits of recovery) and moderate parameter-based compression. 
 
-| Strategy Name | Description                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| R100          | All matrices compressed to rank 100, except for the final output layer                       |
-| Weight95      | All matrices are compressed so that they have the top 95% of their singular values by weight |
-| Greedy98_50_15 | Iterated until the training character accuracy is just above 98.5%; at each iteration, reduces the rank of each matrix by 50 individually and accepts the 15 changes that make the smallest change in the loss. |
+| Strategy Type | Configurations Tested | Description |
+| :--- | :--- | :--- |
+| **Uniform Rank** | `R10`, `R150` | All target matrices compressed to a strict, uniform rank across all layers. |
+| **Uniform Weight** | `Weight2`, `Weight32` | Matrices compressed to retain a specific top percentage of their singular values by weight. |
+| **Greedy** | `Greedy` | Iteratively reduces the rank of matrices individually, accepting changes that cause the smallest spike in loss until a target training character accuracy (e.g., 98.5%) is reached. |
 
-Note we never compress the final output layer.
+*Note: We never compress the final output layer.*
 
-### Uniform Rank
+### Extreme Compression vs. Parameter Recovery
 
 ![](img/rank_vs_loss.png)
-
-**Observation:** Applying a strict, uniform rank reduction across all layers leads to a stable loss plateau until a critical threshold is reached, after which the model's decryption accuracy deteriorates sharply. This indicates that certain layers require higher dimensionality to retain essential cipher mappings, making uniform truncation inefficient.
-
-### Uniform Singular Value Weight
-
 ![](img/Weight_vs_loss.png)
 
-**Observation:** Thresholding by singular value energy (retaining a specific percentage of the total weight) provides a more nuanced compression. Because the singular value decay varies between attention and feed-forward layers, this strategy dynamically allocates rank, generally resulting in a smoother degradation of accuracy compared to strict uniform rank limits.
+When pushing the SVD compression to extremes (`R10` and `Weight2`), the model parameter count is slashed from 85,129,760 to under 2,000,000. 
 
-### Greedy Algorithm
+* **Observation:** This aggressive truncation effectively destroys the model's zero-shot decryption capabilities immediately after compression (0% validation sequence accuracy at `E0`). 
+* **Recovery:** However, just three epochs of fine-tuning (`E3`) allow the `R10` model to recover to 93.7% validation sequence accuracy, demonstrating the high plasticity of the low-rank matrices.
+
+### Moderate Compression & The Greedy Advantage
 
 ![](img/heatmap.png)
 
-**Observation:** The heatmap visualizes the final retained rank distribution across the network layers after iterative pruning. It reveals that the greedy strategy aggressively compresses specific layers—often early feed-forward networks or specific attention heads—that contribute less to the final objective, while preserving the rank of highly sensitive bottleneck layers.
+When targeting a more moderate parameter footprint (~25M to ~35M parameters), the difference between compression algorithms becomes clear in the initial, pre-fine-tuning phase (`E0`).
 
-### Fine-Tuning Experiment
+* **Uniform Rank (`R150`) vs Uniform Weight (`Weight32`):** Both drop to roughly 6-7% sequence accuracy immediately after compression. While they both recover remarkably well by `E3` (reaching ~97.7% and ~97.5% validation sequence accuracy, respectively), they require the fine-tuning phase to re-align the truncated weights.
+* **The Greedy Strategy:** The greedy algorithm retains slightly more parameters (~35.7M) but demonstrates vastly superior intelligence in *where* it makes cuts. The heatmap visualizes this final retained rank distribution across the network layers after iterative pruning.
+* **Observation:** By selectively targeting early feed-forward networks or attention heads that contribute less to the final objective, the greedy strategy preserves the highly sensitive bottleneck layers. At `E0` (zero epochs of fine-tuning), it maintains an 81.5% validation sequence accuracy, and after three epochs, it reaches a highly efficient 97.3%.
+
+### Fine-Tuning is Critical
 
 ![](img/low_rank_finetuning.png)
 ![](img/model_param_finetuning.png)
 
-**Observation:** To recover the accuracy lost during the initial SVD compression, we introduced a subsequent fine-tuning phase. By allowing the compressed models to continue training for a limited number of epochs, the low-rank matrices adapt and compensate for the truncated singular values. The experiments demonstrate that fine-tuning significantly restores decryption accuracy across the tested configurations. This approach allows even aggressively compressed variants (like our Greedy strategy) to bridge the performance gap, ultimately yielding a highly efficient model with a minimal parameter footprint and preserved decryption capabilities.
+**Observation:** Across all configurations, introducing a subsequent fine-tuning phase was essential to recover the accuracy lost during the initial SVD compression. By allowing the compressed models to continue training for just 1 to 3 epochs, the low-rank matrices adapt and compensate for the truncated singular values. This approach bridges the performance gap, yielding highly efficient models with a minimal parameter footprint and preserved decryption capabilities.
 
 ## Model
 
