@@ -35,7 +35,7 @@ We compare three different compression strategies:
 | Strategy Name | Description                                                                                  |
 | ------------- | -------------------------------------------------------------------------------------------- |
 | R100          | All matrices compressed to rank 100, except for the final output layer                       |
-| Energy95      | All matrices are compressed so that they have the top 95% of their singular values by weight |
+| Weight95      | All matrices are compressed so that they have the top 95% of their singular values by weight |
 | Greedy95_10_5 | Iterated until the training character accuracy is just above 95%; at each iteration, reduces the rank of each matrix by 10 individually and accepts the 5 changes that make the smallest change in the loss. |
 
 Note we never compress the final output layer.
@@ -46,7 +46,7 @@ Note we never compress the final output layer.
 
 ### Uniform Singular Value Weight
 
-![](img/energy_vs_loss.png)
+![](img/Weight_vs_loss.png)
 
 ### Greedy Algorithm
 
