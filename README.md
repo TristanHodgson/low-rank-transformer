@@ -13,7 +13,7 @@ We train a BERT style transformer model trained to decrypt simple cesar ciphers.
 
 1. Set the `.env` file in the root of the repo as below
 
-```
+```env
 RUNPOD_API_KEY=
 
 R2_ACCESS_KEY_ID=
@@ -25,10 +25,13 @@ R2_BUCKET=
 2. Install requirements: `pip install -r requirements.txt`
 3. Run `python deploy/runpod-deploy.py`
 
+### Production Benchmarking
+
+To evaluate throughput and performance increases, saved model checkpoints (such as `model/full_rank.pth` and compressed variants like `model/Greedy98_50_15.pth`) can be deployed via FastAPI inside Docker containers on AWS.
 
 ## Results
 
-You can find scree plots for each matrix [here](img/scree.png) and our full results tables [here](output.txt)
+You can find logarithmic scale scree plots generated using matplotlib for each matrix [here](img/scree.png) and our full results tables [here](output.txt).
 
 We compare three different compression strategies:
 
@@ -36,7 +39,7 @@ We compare three different compression strategies:
 | ------------- | -------------------------------------------------------------------------------------------- |
 | R100          | All matrices compressed to rank 100, except for the final output layer                       |
 | Weight95      | All matrices are compressed so that they have the top 95% of their singular values by weight |
-| Greedy95_10_5 | Iterated until the training character accuracy is just above 95%; at each iteration, reduces the rank of each matrix by 10 individually and accepts the 5 changes that make the smallest change in the loss. |
+| Greedy98_50_15 | Iterated until the training character accuracy is just above 98.5%; at each iteration, reduces the rank of each matrix by 50 individually and accepts the 15 changes that make the smallest change in the loss. |
 
 Note we never compress the final output layer.
 
@@ -44,18 +47,23 @@ Note we never compress the final output layer.
 
 ![](img/rank_vs_loss.png)
 
+**Observation:** Applying a strict, uniform rank reduction across all layers leads to a stable loss plateau until a critical threshold is reached, after which the model's decryption accuracy deteriorates sharply. This indicates that certain layers require higher dimensionality to retain essential cipher mappings, making uniform truncation inefficient.
+
 ### Uniform Singular Value Weight
 
 ![](img/Weight_vs_loss.png)
+
+**Observation:** Thresholding by singular value energy (retaining a specific percentage of the total weight) provides a more nuanced compression. Because the singular value decay varies between attention and feed-forward layers, this strategy dynamically allocates rank, generally resulting in a smoother degradation of accuracy compared to strict uniform rank limits.
 
 ### Greedy Algorithm
 
 ![](img/heatmap.png)
 
+**Observation:** The heatmap visualizes the final retained rank distribution across the network layers after iterative pruning. It reveals that the greedy strategy aggressively compresses specific layers—often early feed-forward networks or specific attention heads—that contribute less to the final objective, while preserving the rank of highly sensitive bottleneck layers.
 
 ## Model
 
-Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings.
+Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and additive learned positional embeddings. The architecture relies on streamlined, modular functions for the scaled dot-product attention and transformer blocks.
 
 | Parameter  | Value |
 | ---------- | ----- |
@@ -66,7 +74,8 @@ Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and
 | d_ff       | 3072  |
 | n_layers   | 12    |
 
-[![PDF Preview](write-up/model-diagram.png)](write-up/model-diagram.pdf)
+
+[![The Model](write-up/model-diagram.png)](write-up/model-diagram.pdf)
 
 ## Data
 
