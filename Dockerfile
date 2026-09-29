@@ -1,5 +1,4 @@
-FROM nvidia/cuda:13.4.1-tensorrt-devel-ubuntu26.04
-
+FROM --platform=linux/amd64 nvidia/cuda:13.4.1-runtime-ubuntu26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
