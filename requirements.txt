@@ -5,3 +5,8 @@ tqdm
 runpod
 python-dotenv
 boto3
+fastapi
+pydantic
+aiohttp
+uvicorn
+requests

@@ -1,4 +1,4 @@
-# Low Rank Approximation of Transformers for Decryption of Simple Ciphers
+`# Low Rank Approximation of Transformers for Decryption of Simple Ciphers
 
 We train a BERT style transformer model trained to decrypt simple cesar ciphers. Once trained, the weight matrices are compressed using low-rank approximations via SVD. This enables us to benchmark how this method of model simplification impacts total parameter count, computational efficiency, and decryption accuracy.
 
@@ -24,10 +24,6 @@ R2_BUCKET=
 
 2. Install requirements: `pip install -r requirements.txt`
 3. Run `python deploy/runpod-deploy.py`
-
-### Production Benchmarking
-
-To evaluate throughput and performance increases, saved model checkpoints (such as `model/full_rank.pth` and compressed variants like `model/Greedy98_50_15.pth`) can be deployed via FastAPI inside Docker containers on AWS.
 
 ## Results
 
@@ -102,4 +98,4 @@ Our model is a pre-LN variant of a BERT-style encoder using ReLU activations and
 - Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. ‘BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding’. arXiv:1810.04805. Preprint, arXiv, 24 May 2019. https://doi.org/10.48550/arXiv.1810.04805.
 - ‘The Annotated Transformer’. Accessed 1 September 2026. https://nlp.seas.harvard.edu/annotated-transformer/.
 - Xiong, Ruibin, Yunchang Yang, Di He, et al. ‘On Layer Normalization in the Transformer Architecture’. arXiv:2002.04745. Preprint, arXiv, 29 June 2020. https://doi.org/10.48550/arXiv.2002.04745.
-- YouTube. ‘3blue1brown - Deep Learning’. Accessed 30 August 2026. http://www.youtube.com/playlist?list=PLOH0RpNCcyWRxD8bYrbZbVZrto0U8axHR.
+- YouTube. ‘3blue1brown - Deep Learning’. Accessed 30 August 2026. http://www.youtube.com/playlist?list=PLOH0RpNCcyWRxD8bYrbZbVZrto0U8axHR.`
